@@ -10,12 +10,13 @@ export const fonts = {
 export const colors = {
   black: "#000000",
   white: "#ffffff",
-  primary: "#63C7B2",
-  primary_shine: "#60ffde",
-  primary_highlight: "#3f8677",
+  primary: "#00C0FF",
+  primary_shine: "#00C0FF",
+  primary_highlight: "#29aeda",
   secondary: "#071f47",
-  third: "#3C887E",
-  backgroundPrimary: "#263D42",
+  secondary_shine: "#2979ff",
+  third: "#098eb9",
+  backgroundPrimary: "#002",
 };
 
 export const fontSizes = {

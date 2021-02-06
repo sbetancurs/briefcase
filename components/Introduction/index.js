@@ -1,4 +1,4 @@
-import Developer from "../Icons/Developer";
+import MainLogo from "../Icons/MainLogo";
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
 import Button from "../Button";
 
@@ -17,7 +17,7 @@ export default function Introduction() {
           <Button text='Contact me' />
         </section>
         <section className='introductionLogo'>
-          <Developer width={500} height={500} />
+          <MainLogo width={500} height={500} />
         </section>
       </article>
       <style jsx>{`
