@@ -6,12 +6,18 @@ export default function Biography() {
     <>
       <article>
         <section className='title'>
-          <h2>My Biography</h2>
+          <h2>
+            My <br /> Biography
+          </h2>
           <hr />
           <Button text='Contact me' />
         </section>
         <section className='biography'>
-          <h3>EL TITULO DE MI BIOGRAPHYA</h3>
+          <h3 className='bio-title'>
+            Full stack software developer,
+            <br />
+            experience with microsoft technologies
+          </h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
             quo, laborum delectus similique eligendi consectetur ex laboriosam.
@@ -21,11 +27,8 @@ export default function Biography() {
           <p>
             adipisicing elit. Consequatur quo, laborum delectus similique
             eligendi consectetur ex laboriosam. Ipsum quos impedit minima at.
-            Accusantium repudiandae impedit aut soluta inventore, in quis. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Consequatur quo,
-            laborum delectus similique eligendi consectetur ex laboriosam. Ipsum
-            quos impedit minima at. Accusantium repudiandae impedit aut soluta
-            inventore, in quis.
+            Accusantium repudiandae impedit aut soluta inventore, in quis.
+            Loremquis.
           </p>
         </section>
       </article>
@@ -49,14 +52,24 @@ export default function Biography() {
         hr {
           margin: 20px 0;
         }
+        p{
+          margin-bottom:20px;
+          font-size: ${fontSizes.font_size_xs};
+        }
         .title {
-          font-size: ${fontSizes.font_size_md};
+          font-size: ${fontSizes.font_size_lg};
           background: ${colors.third};
           align-self:center;
         }
+        .bio-title {
+          font-size: ${fontSizes.font_size_sm};
+          background: ${colors.third};
+          text-align:left;
+          margin-bottom:20px;
+        }
         .biography {
           padding: 0 50px;
-          width:600px;
+          width:700px;
           background: ${colors.third};
 
         }
@@ -70,8 +83,8 @@ export default function Biography() {
           }
           .biography {
           padding: 20px 50px;
-
-        }
+          width:100%
+          }
         }
       `}</style>
     </>

@@ -4,74 +4,146 @@ export default function Expertisies() {
   return (
     <>
       <article>
-        <section className='title'>
+        <section className='main-title'>
           <h2>My Expertise</h2>
           <hr />
         </section>
-        <section className='expertise'>
-          <article className='items'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            quo, laborum delectus similique eligendi consectetur ex laboriosam.
-            Ipsum quos impedit minima at. Accusantium repudiandae impedit aut
-            soluta inventore, in quis.
-          </article>
-          <article className='items'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            quo, laborum delectus similique eligendi consectetur ex laboriosam.
-            Ipsum quos impedit minima at. Accusantium repudiandae impedit aut
-            soluta inventore, in quis.
-          </article>
-          <article className='items'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            quo, laborum delectus similique eligendi consectetur ex laboriosam.
-            Ipsum quos impedit minima at. Accusantium repudiandae impedit aut
-            soluta inventore, in quis.
-          </article>
+        <section className='expertise cards'>
+          <div className='card javascript'>
+            <h1 className='title'>JavaScript</h1>
+            <h2 className='subtitle'>4 years experience</h2>
+            <p>Javascript including ES2015.</p>
+            <p>Javascript MV* frameworks.</p>
+          </div>
+          <div className='card html-css'>
+            <h1 className='title'>HTML / CSS</h1>
+            <h2 className='subtitle'>4 years experience</h2>
+            <p>HTML5 and related APIs</p>
+            <p>CSS including CSS3 and SASS</p>
+          </div>
+          <div className='card react'>
+            <h1 className='title'>React</h1>
+            <h2 className='subtitle'>1 years experience</h2>
+            <p>React, Hooks, and multiple React libraries.</p>
+            <p>Redux and multiple Redux libraries.</p>
+          </div>
         </section>
       </article>
       <style jsx>{`
         article {
-          background-color: ${colors.secondary};
+          background-color: ${colors.backgroundSecondary};
           color: ${colors.white};
           display: flex;
           flex-direction: column;
-          height: 900px;
           padding: 50px 0;
         }
         h2 {
           margin-bottom: 0;
         }
         hr {
-          width: 20%;
+          width: 16%;
           margin: 20px 0;
         }
-        .title {
+        .main-title {
+          align-items: center;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          font-size: ${fontSizes.font_size_md};
+          font-size: ${fontSizes.font_size_lg};
+          width: 100%;
         }
-        .expertise {
+        .title {
+          font-size: ${fontSizes.font_size_lg};
+          margin-bottom: 20px;
+          text-align: left;
+          white-space: nowrap;
+          color: ${colors.secondary};
+        }
+        .subtitle {
+          font-size: ${fontSizes.font_size_md};
+          margin-bottom: 20px;
+          color: ${colors.secondary};
+        }
+        .expertise.cards {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
-          padding: 100px;
+          justify-content: center;
         }
-        .items {
-          border-radius: 20px;
-          padding: 10px;
-          border: 1px solid ${colors.white};
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-          width: 30%;
-          min-height: 500px;
-          height: 100%;
+        .card {
+          max-width: 400px;
+          position: relative;
+          padding: 20px;
+          margin: 20px;
+          border-radius: 12px;
+          box-shadow: 2px 8px 15px 10px rgba(0, 0, 0, 0.05),
+            4px 5px 10px 0 rgba(0, 0, 0, 0.1),
+            2px 2px 5px 2px rgba(0, 0, 0, 0.25);
         }
-        .items:nth-child(1) {
-          background: purple;
+        .card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-radius: 12px;
+          opacity: 0.2;
+        }
+        .card h1,
+        .card h2,
+        .card p {
+          position: relative;
+        }
+
+        .card p {
+          color: ${colors.white};
+          font-size: ${fontSizes.font_size_sm};
+          text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+          margin-bottom: 20px;
+        }
+
+        .card .title {
+          text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2);
+          white-space: nowrap;
+        }
+        .card.javascript {
+          background: linear-gradient(-45deg, #b7791f 0%, #ecc94b 100%);
+        }
+
+        .card.javascript::before {
+          background: url("/javascript.svg") no-repeat;
+          background-size: 100%;
+          background-position: calc(100% + 50px) calc(100% + 50px);
+        }
+
+        .card.html-css {
+          background: linear-gradient(-45deg, #dd6b20 0%, #f6ad55 100%);
+        }
+
+        .card.html-css::before {
+          background: url("/html.svg") no-repeat;
+          background-size: 100%;
+          background-position: calc(100% + 50px) calc(100% + 50px);
+        }
+
+        .card.react {
+          background: linear-gradient(-45deg, #3182ce 0%, #63b3ed 100%);
+        }
+
+        .card.react::before {
+          background: url("/react.svg") no-repeat;
+          background-size: 100%;
+          background-position: calc(100% + 50px) calc(100% + 50px);
         }
         @media (max-width: ${breakpoints.mobile}) {
           article {
             width: ${breakpoints.mobile};
+          }
+          hr {
+            width: 50%;
+          }
+          .expertise.cards {
+            flex-direction: column;
+            align-items: center;
           }
         }
       `}</style>

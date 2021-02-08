@@ -10,7 +10,7 @@ export const globalStyles = css.global`
     background-size: 50px 50px;
     padding: 0;
     margin: 0;
-    font-family: ${fonts.base};
+    font-family: ${fonts.body_font};
   }
   * {
     box-sizing: border-box;
@@ -57,6 +57,10 @@ export const globalStyles = css.global`
     font-size: 100%;
     font-weight: normal;
     line-height: 1.125;
+  }
+
+  hr  {
+    color: ${colors.white};;
   }
 `;
 

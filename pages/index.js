@@ -4,6 +4,7 @@ import TopMenu from "../components/TopMenu";
 import Introduction from "../components/Introduction";
 import Expertisies from "../components/Expertisies";
 import Biography from "../components/Biography";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Introduction />
       <Biography />
       <Expertisies />
+      <Footer />
     </>
   );
 }

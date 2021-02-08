@@ -3,8 +3,11 @@ export const breakpoints = {
 };
 
 export const fonts = {
+  base1:
+    'Rubik,system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif',
   base:
-    '"Rubik",system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif',
+    'Rubik, sans-serif',
+    body_font:"Karla, sans-serif"
 };
 
 export const colors = {
@@ -17,6 +20,7 @@ export const colors = {
   secondary_shine: "#2979ff",
   third: "#098eb9",
   backgroundPrimary: "#002",
+  backgroundSecondary: "#324376",
 };
 
 export const fontSizes = {
