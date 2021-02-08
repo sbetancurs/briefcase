@@ -9,6 +9,12 @@ export default function Expertisies() {
           <hr />
         </section>
         <section className='expertise cards'>
+          <div className='card csharp'>
+            <h1 className='title'>C Sharp</h1>
+            <h2 className='subtitle'>4 years experience</h2>
+            <p>ASP .NET, .NET Core, Razor pages, WPF</p>
+            <p>MVC, MVVM, APIS and multiple libraries.</p>
+          </div>
           <div className='card javascript'>
             <h1 className='title'>JavaScript</h1>
             <h2 className='subtitle'>4 years experience</h2>
@@ -26,6 +32,23 @@ export default function Expertisies() {
             <h2 className='subtitle'>1 years experience</h2>
             <p>React, Hooks, and multiple React libraries.</p>
             <p>Redux and multiple Redux libraries.</p>
+          </div>
+        </section>
+        <section className='expertise skills'>
+          <h3 className='skills title'>Skills</h3>
+          <div className='skills content'>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Quodoloribus eligendi, esse possimus perferendis beatae neque
+              dicta voluptates consectetur. Harum molestiae suscipit sapiente
+              nobis aut ratione. At impedit libero nesciunt!
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Quodoloribus eligendi, esse possimus perferendis beatae neque
+              dicta voluptates consectetur. Harum molestiae suscipit sapiente
+              nobis aut ratione. At impedit libero nesciunt!
+            </p>
           </div>
         </section>
       </article>
@@ -52,14 +75,14 @@ export default function Expertisies() {
           width: 100%;
         }
         .title {
-          font-size: ${fontSizes.font_size_lg};
+          font-size: ${fontSizes.font_size_md};
           margin-bottom: 20px;
           text-align: left;
           white-space: nowrap;
           color: ${colors.secondary};
         }
         .subtitle {
-          font-size: ${fontSizes.font_size_md};
+          font-size: ${fontSizes.font_size_sm};
           margin-bottom: 20px;
           color: ${colors.secondary};
         }
@@ -104,13 +127,14 @@ export default function Expertisies() {
         .card .title {
           text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2);
           white-space: nowrap;
+          font-weight: 900;
         }
         .card.javascript {
           background: linear-gradient(-45deg, #b7791f 0%, #ecc94b 100%);
         }
 
         .card.javascript::before {
-          background: url("/javascript.svg") no-repeat;
+          background: url("/icons/javascript.svg") no-repeat;
           background-size: 100%;
           background-position: calc(100% + 50px) calc(100% + 50px);
         }
@@ -120,7 +144,7 @@ export default function Expertisies() {
         }
 
         .card.html-css::before {
-          background: url("/html.svg") no-repeat;
+          background: url("/icons/html.svg") no-repeat;
           background-size: 100%;
           background-position: calc(100% + 50px) calc(100% + 50px);
         }
@@ -130,10 +154,36 @@ export default function Expertisies() {
         }
 
         .card.react::before {
-          background: url("/react.svg") no-repeat;
+          background: url("/icons/react.svg") no-repeat;
           background-size: 100%;
           background-position: calc(100% + 50px) calc(100% + 50px);
         }
+
+        .card.csharp {
+          background: linear-gradient(-45deg, #300083 0%, #9d6dd7 100%);
+        }
+
+        .card.csharp::before {
+          background: url("/icons/csharp.svg") no-repeat;
+          background-size: 100%;
+          background-position: calc(100% + 50px) calc(100% + 50px);
+        }
+        .expertise.skills {
+          display: flex;
+          flex-direction: column;
+          padding: 50px 500px;
+          widht: 100%;
+        }
+        .skills.title {
+          color: ${colors.white};
+          font-size: ${fontSizes.font_size_xl};
+        }
+
+        .skills.content p {
+          margin-bottom: 20px;
+          font-size: ${fontSizes.font_size_xs};
+        }
+
         @media (max-width: ${breakpoints.mobile}) {
           article {
             width: ${breakpoints.mobile};
@@ -144,6 +194,10 @@ export default function Expertisies() {
           .expertise.cards {
             flex-direction: column;
             align-items: center;
+          }
+          .expertise.skills {
+            align-items: center;
+            padding: 20px 50px;
           }
         }
       `}</style>

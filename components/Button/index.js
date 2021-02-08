@@ -1,6 +1,6 @@
 import { colors, fontSizes } from "../../styles/theme";
 
-export default function Button({ text, disabled, onClick }) {
+export default function Button({ text, disabled, onClick, width }) {
   return (
     <>
       <button disabled={disabled} onClick={onClick}>
@@ -21,6 +21,7 @@ export default function Button({ text, disabled, onClick }) {
             padding: 30px 40px;
             transition: opacity 0.3s ease;
             user-select: none;
+            width: ${width};
           }
 
           button[disabled] {

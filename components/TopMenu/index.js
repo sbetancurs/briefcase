@@ -16,11 +16,11 @@ export default function TopMenu() {
       </nav>
       <style jsx>{`
         nav {
-          border-bottom: 1px solid ${colors.secondary};
           height: 60px;
           display: flex;
           flex-direction: row;
           justify-content: flex-end;
+          z-index: 100;
         }
         div {
           cursor: pointer;

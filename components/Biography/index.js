@@ -1,7 +1,14 @@
+import { useRouter } from "next/router";
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
 import Button from "../Button";
 
 export default function Biography() {
+  const router = useRouter();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push("/#Contactme");
+  };
   return (
     <>
       <article>
@@ -10,7 +17,7 @@ export default function Biography() {
             My <br /> Biography
           </h2>
           <hr />
-          <Button text='Contact me' />
+          <Button text='Contact me' onClick={handleClick} />
         </section>
         <section className='biography'>
           <h3 className='bio-title'>

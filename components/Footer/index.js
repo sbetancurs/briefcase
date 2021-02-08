@@ -4,14 +4,18 @@ export default function Footer() {
   return (
     <>
       <footer>
-        <h6>Developed by Sebastian Betancur Salazar ©</h6>
+        <h6>Developed by Sebastian Betancur Salazar 2021 ©</h6>
       </footer>
       <style jsx>
         {`
           footer {
-            font-size: ${fontSizes.font_size_sm};
-            height: 100px;
-            color: ${colors.white};
+            align-items: center;
+            border-top: 1px solid ${colors.white};
+            color: ${colors.primary_highlight};
+            display: flex;
+            font-size: ${fontSizes.font_size_xs};
+            height: 80px;
+            justify-content: center;
           }
         `}
       </style>

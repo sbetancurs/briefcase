@@ -10,7 +10,7 @@ export const globalStyles = css.global`
     background-size: 50px 50px;
     padding: 0;
     margin: 0;
-    font-family: ${fonts.body_font};
+    font-family: ${fonts.base};
   }
   * {
     box-sizing: border-box;
@@ -58,9 +58,12 @@ export const globalStyles = css.global`
     font-weight: normal;
     line-height: 1.125;
   }
+  ul {
+    list-style: none;
+  }
 
-  hr  {
-    color: ${colors.white};;
+  hr {
+    color: ${colors.white};
   }
 `;
 
@@ -76,7 +79,7 @@ export default css`
   }
   @media (max-width: ${breakpoints.mobile}) {
     main {
-      height: 90vh;
+      height: 100%;
       width: ${breakpoints.mobile};
       flex-direction: column;
     }
