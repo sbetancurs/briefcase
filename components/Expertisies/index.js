@@ -21,6 +21,8 @@ export default function Expertisies() {
             <p>Javascript including ES2015.</p>
             <p>Javascript MV* frameworks.</p>
           </div>
+        </section>
+        <section className='expertise cards'>
           <div className='card html-css'>
             <h1 className='title'>HTML / CSS</h1>
             <h2 className='subtitle'>4 years experience</h2>
