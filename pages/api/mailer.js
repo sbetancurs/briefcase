@@ -1,13 +1,12 @@
 const nodemailer = require("nodemailer");
-const sgTransport = require("nodemailer-sendgrid-transport");
 
-const transporter = nodemailer.createTransport(
-  sgTransport({
-    auth: {
-      api_key: process.env.SENDGRID_API,
-    },
-  })
-);
+var transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "sebasbetancur97@gmail.com",
+    pass: process.env.AUTH_PASSWORD,
+  },
+});
 
 const send = ({ email, name, text }) => {
   const from = name && email ? `${name} <${email}>` : `${name || email}`;
