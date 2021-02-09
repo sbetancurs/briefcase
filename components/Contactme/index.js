@@ -23,7 +23,16 @@ export default function ContactMe() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(formValues)
+    fetch("/api/contact", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, cors, *same-origin
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValues), // body data type must match "Content-Type" header
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
   }
 
   return (
