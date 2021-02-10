@@ -1,7 +1,7 @@
+import { breakpoints } from "styles/theme";
+
 import Colombia from "components/Icons/Colombia";
 import Usa from "components/Icons/Usa";
-
-import { colors } from "styles/theme";
 
 export default function TopMenu() {
   return (
@@ -27,10 +27,12 @@ export default function TopMenu() {
           padding: 10px;
         }
         div:hover {
-           {
-            /* background: ${colors.primary}; */
-          }
           border-radius: 50%;
+        }
+        @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
+          nav {
+            width: ${breakpoints.pc};
+          }
         }
       `}</style>
     </>

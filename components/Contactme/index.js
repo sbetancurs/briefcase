@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Input from "components/Input";
 import Button from "components/Button";
+import Loader from "components/Loader";
 
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
 
@@ -10,19 +11,23 @@ export default function ContactMe() {
     name: "",
     email: "",
     message: "",
-  })
+  });
+
+  const [loading, setLoading] = useState(true);
 
   const handleChange = (e) => {
-    e.preventDefault()
-    const { value, name } = e.target
+    e.preventDefault();
+    const { value, name } = e.target;
     setFormValues({
       ...formValues,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    setLoading(true);
+
     fetch("/api/contact", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, cors, *same-origin
@@ -31,13 +36,17 @@ export default function ContactMe() {
       },
       body: JSON.stringify(formValues), // body data type must match "Content-Type" header
     })
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        setLoading(false);
+      })
       .catch((err) => console.error(err));
-  }
+  };
 
   return (
     <>
-      <article id="Contactme">
+      <article id='Contactme'>
+        {loading && <Loader />}
         <h2>Contact Me!</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
@@ -133,6 +142,12 @@ export default function ContactMe() {
           a {
             color: ${colors.white};
           }
+          @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
+            article {
+              width: ${breakpoints.pc};
+              padding: 20px 50px;
+            }
+          }
           @media (max-width: ${breakpoints.mobile}) {
             article {
               width: ${breakpoints.mobile};
@@ -144,6 +159,15 @@ export default function ContactMe() {
           }
         `}
       </style>
+      <style jsx global>{`
+        body article {
+          opacity: ${loading ? 0.5 : 1};
+        }
+        .lds-circle   {
+          opacity:   1;
+          z-index:1;
+        }
+      `}</style>
     </>
   );
 }

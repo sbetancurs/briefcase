@@ -91,7 +91,17 @@ export default function Introduction() {
           place-items: center;
         }
 
-        @media (min-width: ${breakpoints.mobile}) {
+        @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
+          article {
+            width: ${breakpoints.pc};
+            height: 100vh;
+          }
+          .particles {
+            display: none;
+          }
+        }
+
+        @media (min-width: ${breakpoints.pc}) {
           article {
             height: 90vh;
           }

@@ -1,4 +1,4 @@
-import { colors, fontSizes } from "styles/theme";
+import { colors, fontSizes, breakpoints } from "styles/theme";
 
 export default function Footer() {
   return (
@@ -16,6 +16,11 @@ export default function Footer() {
             font-size: ${fontSizes.font_size_xs};
             height: 80px;
             justify-content: center;
+          }
+          @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
+            footer {
+              width: ${breakpoints.pc};
+            }
           }
         `}
       </style>

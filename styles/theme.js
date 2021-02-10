@@ -1,5 +1,7 @@
 export const breakpoints = {
   mobile: "600px",
+  ipad: "768px",
+  pc: "1080px",
 };
 
 export const fonts = {

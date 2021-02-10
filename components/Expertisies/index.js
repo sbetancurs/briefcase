@@ -186,6 +186,16 @@ export default function Expertisies() {
           font-size: ${fontSizes.font_size_xs};
         }
 
+        @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
+          article {
+            width: ${breakpoints.pc};
+          }
+          .expertise.skills {
+            align-items: center;
+            padding: 20px 50px;
+          }
+        }
+
         @media (max-width: ${breakpoints.mobile}) {
           article {
             width: ${breakpoints.mobile};

@@ -78,10 +78,19 @@ export default function Biography() {
           padding: 0 50px;
           width:700px;
           background: ${colors.third};
-
         }
-        .items:nth-child(1) {
-          background: purple;
+        @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
+          article {
+            width: ${breakpoints.pc};
+            padding: 100px 50px;
+          }
+          .biography {
+            padding: 0;
+            background: ${colors.third};
+          }
+          .title {
+            margin-right:30px; 
+          }
         }
         @media (max-width: ${breakpoints.mobile}) {
           article {
