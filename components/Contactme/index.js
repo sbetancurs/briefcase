@@ -7,13 +7,14 @@ import Loader from "components/Loader";
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
 
 export default function ContactMe() {
-  const [formValues, setFormValues] = useState({
+  const initialValues = {
     name: "",
     email: "",
     message: "",
-  });
+  };
+  const [formValues, setFormValues] = useState(initialValues);
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -39,6 +40,7 @@ export default function ContactMe() {
       .then((res) => {
         console.log(res);
         setLoading(false);
+        useState(initialValues);
       })
       .catch((err) => console.error(err));
   };
@@ -94,7 +96,9 @@ export default function ContactMe() {
               type='text'
               onChange={handleChange}
             />
-            <Button text={"Send"} width='100%' />
+            <Button disabled={loading} width='100%'>
+              <p>send</p>
+            </Button>
           </form>
         </section>
       </article>
@@ -163,9 +167,9 @@ export default function ContactMe() {
         body article {
           opacity: ${loading ? 0.5 : 1};
         }
-        .lds-circle   {
-          opacity:   1;
-          z-index:1;
+        .lds-circle {
+          opacity: 1;
+          z-index: 1;
         }
       `}</style>
     </>

@@ -3,8 +3,9 @@ import MainLogo from "../Icons/MainLogo";
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
 import Button from "../Button";
 import Particles from "react-particles-js";
+import { withTranslation } from "i18n.js";
 
-export default function Introduction() {
+function Introduction({ t }) {
   const router = useRouter();
 
   const handleClick = (e) => {
@@ -17,13 +18,17 @@ export default function Introduction() {
       <article>
         <section className='introductionContent'>
           <h1>
-            <span style={{ color: `${colors.primary}` }}>Hello,</span> <br />{" "}
-            I'm Sebastian, <br />
-            web developer. <br />
+            <span style={{ color: `${colors.primary}` }}>
+              {t("introduction:hello")},
+            </span>
+            <br /> {t("introduction:Im")} Sebastian, <br />
+            {t("introduction:WebDeveloper")}. <br />
           </h1>
-          <p className='info'>Actually fullstack developer in Sourcecol SAS.</p>
+          <p className='info'>🇨🇴 {t("introduction:Actually")}.</p>
           <hr />
-          <Button text='Contact me' onClick={handleClick} />
+          <Button onClick={handleClick}>
+            <p>{t("Contactme")}</p>
+          </Button>
         </section>
         <section className='introductionLogo'>
           <MainLogo width={500} height={500} />
@@ -120,3 +125,5 @@ export default function Introduction() {
     </>
   );
 }
+
+export default withTranslation(["common", "introduction"])(Introduction);

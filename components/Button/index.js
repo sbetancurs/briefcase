@@ -1,10 +1,11 @@
+import { Children } from "react";
 import { colors, fontSizes } from "../../styles/theme";
 
-export default function Button({ text, disabled, onClick, width }) {
+export default function Button({ children, disabled, onClick, width }) {
   return (
     <>
       <button disabled={disabled} onClick={onClick}>
-        <p>{text}</p>
+        {children}
       </button>
       <style jsx>
         {`

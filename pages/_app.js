@@ -1,4 +1,6 @@
+import App from "next/app";
 import AppLayout from "../components/AppLayout";
+import { appWithTranslation } from "i18n";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,4 +10,8 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp
+MyApp.getInitialProps = async (appContext) => ({
+  ...(await App.getInitialProps(appContext)),
+});
+
+export default appWithTranslation(MyApp);

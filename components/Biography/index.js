@@ -1,42 +1,36 @@
-import { useRouter } from "next/router";
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
-import Button from "../Button";
+import { withTranslation } from "i18n.js";
 
-export default function Biography() {
-  const router = useRouter();
+function Biography({ t }) {
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    router.push("/#Contactme");
-  };
+  const getDate = () =>{
+      let today = new Date();
+      let bornDate = new Date("1997/12/31 11:30:00");
+      let age = today.getFullYear() - bornDate.getFullYear();
+      let monthsDif = today.getMonth() - bornDate.getMonth();
+      if (
+        monthsDif < 0 ||
+        (monthsDif === 0 && today.getDate() < bornDate.getDate())
+      ) {
+        age--;
+      }
+      
+      return age;
+  }
+
   return (
     <>
       <article>
         <section className='title'>
           <h2>
-            My <br /> Biography
+            {t("My")} <br /> {t("biography:Biography")}
           </h2>
           <hr />
-          <Button text='Contact me' onClick={handleClick} />
         </section>
         <section className='biography'>
-          <h3 className='bio-title'>
-            Full stack software developer,
-            <br />
-            experience with microsoft technologies
-          </h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            quo, laborum delectus similique eligendi consectetur ex laboriosam.
-            Ipsum quos impedit minima at. Accusantium repudiandae impedit aut
-            soluta inventore, in quis. Lorem ipsum dolor sit amet consectetur
-          </p>
-          <p>
-            adipisicing elit. Consequatur quo, laborum delectus similique
-            eligendi consectetur ex laboriosam. Ipsum quos impedit minima at.
-            Accusantium repudiandae impedit aut soluta inventore, in quis.
-            Loremquis.
-          </p>
+          <h3 className='bio-title'>{t("biography:BioTitle")}</h3>
+          <p>{t("biography:BioContent1").replace("<age>", getDate())}</p>
+          <p>{t("biography:BioContent2")}</p>
         </section>
       </article>
       <style jsx>{`
@@ -106,3 +100,5 @@ export default function Biography() {
     </>
   );
 }
+
+export default withTranslation(["common", "biography"])(Biography);
