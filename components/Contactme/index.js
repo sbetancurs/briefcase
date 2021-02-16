@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Input from "components/Input";
+import InputArea from "components/InputArea";
 import Button from "components/Button";
 import Loader from "components/Loader";
 
@@ -40,7 +41,7 @@ export default function ContactMe() {
       .then((res) => {
         console.log(res);
         setLoading(false);
-        useState(initialValues);
+        setFormValues(initialValues);
       })
       .catch((err) => console.error(err));
   };
@@ -50,7 +51,7 @@ export default function ContactMe() {
       <article id='Contactme'>
         {loading && <Loader />}
         <h2>Contact Me!</h2>
-        <p>
+        <p className='contactMeText'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
           error natus velit voluptas porro sed asperiores maxime at eveniet
           totam, iure expedita. Quia, aut provident? Provident voluptatem
@@ -89,7 +90,7 @@ export default function ContactMe() {
               type='email'
               onChange={handleChange}
             />
-            <Input
+            <InputArea
               name='message'
               value={formValues.message}
               placeholder='Mensaje'
@@ -120,7 +121,7 @@ export default function ContactMe() {
             white-space: nowrap;
             font-size: ${fontSizes.font_size_lg};
           }
-          p {
+          .contactMeText {
             font-size: ${fontSizes.font_size_xs};
             margin-bottom: 50px;
           }
