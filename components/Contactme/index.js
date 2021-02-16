@@ -30,7 +30,7 @@ export default function ContactMe() {
     e.preventDefault();
     setLoading(true);
 
-    fetch("/api/contact", {
+    fetch("/api/contactme", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, cors, *same-origin
       headers: {

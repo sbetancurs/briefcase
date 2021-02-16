@@ -1,6 +1,6 @@
 import App from "next/app";
 import AppLayout from "../components/AppLayout";
-import { appWithTranslation } from "i18n";
+import { appWithTranslation, i18n } from "i18n";
 
 function MyApp({ Component, pageProps }) {
   return (
