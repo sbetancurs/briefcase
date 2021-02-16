@@ -64,6 +64,7 @@ function Introduction({ t }) {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          margin-top: 30px;
           padding: 40px 60px;
           z-index: 100;
         }
