@@ -7,7 +7,7 @@ import useTranslation from "hooks/useTranslation";
 
 export default function TopMenu() {
   const [language, changeLanguage] = useTranslation();
-
+  console.log(language);
   const handleClick = (e, lg) => {
     e.preventDefault();
     changeLanguage(lg);
