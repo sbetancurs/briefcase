@@ -7,6 +7,12 @@ export default function AppLayout({ children }) {
       <Head>
         <title>Briefcase</title>
         <link rel='icon' href='/sebas.ico' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Martel:wght@300;400;700&display=swap'
+          rel='stylesheet'
+        />
       </Head>
       <div>
         <main>{children}</main>

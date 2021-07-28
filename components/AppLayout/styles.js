@@ -10,7 +10,8 @@ export const globalStyles = css.global`
     background-size: 50px 50px;
     padding: 0;
     margin: 0;
-    font-family: ${fonts.base};
+    font-family: "Martel", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
   }
   * {
     box-sizing: border-box;
