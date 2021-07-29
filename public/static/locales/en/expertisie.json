@@ -1,0 +1,7 @@
+{
+  "CSharp": "-ASP .NET, .NET Core, WPF and Razor pages.\n-MVC, MVVM, APIS and multiple libraries.",
+  "HTML-CSS-JS": "-Knowledge in Javascript(JSON, TypeScript, VanillaJS).\n-Javascript frameworks (Angular, Node.js) and libraries(React, React-native).\n-HTML5 and related APIs CSS including CSS3 and SASS",
+  "DatabaseTitle": "Database",
+  "Database": "-Knowledge in DB SQL and NOSQL.\n-Management of DB manager.\n-Advanced and simples queries.",
+  "React": "-React, React Hooks and React frameworks .\n-Redux, React Context.\n-API's connections to interact with data."
+}

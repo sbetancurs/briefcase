@@ -10,8 +10,8 @@ export default function Footer() {
         {`
           footer {
             align-items: center;
-            border-top: 1px solid ${colors.white};
-            color: ${colors.primary_highlight};
+            background: ${colors.backgroundSecondary};
+            color: ${colors.white};
             display: flex;
             font-size: ${fontSizes.font_size_xs};
             height: 80px;

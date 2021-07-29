@@ -1,6 +1,4 @@
 {
-  "hello": "Hello",
-  "Im": "I'm",
-  "WebDeveloper": "web developer",
+  "Im": "I am {0} years old.",
   "Actually": "Web developer fullstack with {0} year of experience."
 }

@@ -1,0 +1,8 @@
+{
+  "MyExpertisie": "Mis conocimientos",
+  "CSharp": "-ASP .NET, .NET Core, WPF and Razor pages.\n-MVC, MVVM, APIS y múltiples librerías.",
+  "HTML-CSS-JS": "-Conocimientos en Javascript(JSON, TypeScript, VanillaJS).\n-Javascript frameworks (Angular, Vue.js, Node.js) y librerías(React, React-native).\n-HTML5 y APIs de CSS incluyendo CSS3 and SASS",
+  "DatabaseTitle": "Base de datos",
+  "Database": "-Conocimientos en BD SQL y NOSQL.\n-Manejo de gestores de BD.\n-Consultas avanzadas y simples.",
+  "React": "-React, React Hooks y frameworks de React.\n-Redux, React Context.\n-Conexiones a API's para interactuar con datos."
+}

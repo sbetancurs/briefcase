@@ -7,7 +7,9 @@ import Loader from "components/Loader";
 
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
 
-export default function ContactMe() {
+import { withTranslation } from "i18n.js";
+
+const ContactMe = ({ t }) => {
   const initialValues = {
     name: "",
     email: "",
@@ -48,70 +50,66 @@ export default function ContactMe() {
 
   return (
     <>
-      <article id='Contactme'>
-        {loading && <Loader />}
-        <h2>Contact Me!</h2>
-        <p className='contactMeText'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          error natus velit voluptas porro sed asperiores maxime at eveniet
-          totam, iure expedita. Quia, aut provident? Provident voluptatem
-          maiores perferendis possimus.
-        </p>
-        <section className='contact'>
-          <div className='links'>
-            <h3>Follow me</h3>
-            <ul>
-              <li>
-                <img src='/icons/instagram.svg' alt='twitter' />
-                <a href='https://instagram.com'>Instagram</a>
-              </li>
-              <li>
-                <img src='/icons/twitter.svg' alt='twitter' />
-                <a href='https://twitter.com'>Twitter</a>
-              </li>
-              <li>
-                <img src='/icons/linkedin.svg' alt='linkedin' />
-                <a href='https://linkedin.com'>LinkedIn</a>
-              </li>
-            </ul>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <Input
-              name='name'
-              value={formValues.name}
-              placeholder='Nombre'
-              type='text'
-              onChange={handleChange}
-            />
-            <Input
-              name='email'
-              value={formValues.email}
-              placeholder='Correo electrónico'
-              type='email'
-              onChange={handleChange}
-            />
-            <InputArea
-              name='message'
-              value={formValues.message}
-              placeholder='Mensaje'
-              type='text'
-              onChange={handleChange}
-            />
-            <Button disabled={loading} width='100%'>
-              <p>send</p>
-            </Button>
-          </form>
+      <article id='Contactme' className='d-flex flex-column py-5 min-vh-100'>
+        <section className='container d-flex flex-column py-5 min-vh-100'>
+          {" "}
+          {loading && <Loader />}
+          <h2>{t("contactMe:contactMe")} 📧</h2>
+          <p className='contactMeText mb-5'>{t("contactMe:description")}</p>
+          <section className='contact row'>
+            <div className='col-md-4 col-lg-4 col-12'>
+              <h3>{t("contactMe:followMe")} 🔥</h3>
+              <ul>
+                <li>
+                  <img src='/icons/instagram.svg' alt='twitter' />
+                  <a href='https://instagram.com'>Instagram</a>
+                </li>
+                <li>
+                  <img src='/icons/twitter.svg' alt='twitter' />
+                  <a href='https://twitter.com'>Twitter</a>
+                </li>
+                <li>
+                  <img src='/icons/linkedin.svg' alt='linkedin' />
+                  <a href='https://linkedin.com'>LinkedIn</a>
+                </li>
+              </ul>
+            </div>
+            <div className='col-md-8 col-lg-8 col-12'>
+              <form onSubmit={handleSubmit}>
+                <Input
+                  name='name'
+                  value={formValues.name}
+                  placeholder={t("contactMe:name")}
+                  type='text'
+                  onChange={handleChange}
+                />
+                <Input
+                  name='email'
+                  value={formValues.email}
+                  placeholder={t("contactMe:email")}
+                  type='email'
+                  onChange={handleChange}
+                />
+                <InputArea
+                  name='message'
+                  value={formValues.message}
+                  placeholder={t("contactMe:message")}
+                  type='text'
+                  onChange={handleChange}
+                />
+                <Button disabled={loading} width='100%'>
+                  <p>{t("contactMe:send")}</p>
+                </Button>
+              </form>
+            </div>
+          </section>
         </section>
       </article>
       <style jsx>
         {`
           article {
-            background: ${colors.third};
+            background: ${colors.backgroundSecondary};
             color: ${colors.white};
-            display: flex;
-            flex-direction: column;
-            padding: 50px 500px;
-            width: 100%;
           }
           h2 {
             font-size: ${fontSizes.font_size_lg};
@@ -123,18 +121,15 @@ export default function ContactMe() {
           }
           .contactMeText {
             font-size: ${fontSizes.font_size_xs};
-            margin-bottom: 50px;
+            white-space: pre-line;
           }
           .contact {
             display: flex;
             flex-direction: row;
             height: 100%;
           }
-          .links {
-            margin-right: 50px;
-          }
           form {
-            background: ${colors.backgroundSecondary};
+            background: ${colors.secondary};
             padding: 20px 50px;
             width: 100%;
           }
@@ -175,4 +170,6 @@ export default function ContactMe() {
       `}</style>
     </>
   );
-}
+};
+
+export default withTranslation(["common", "contactMe"])(ContactMe);

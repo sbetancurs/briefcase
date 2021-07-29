@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import MainLogo from "../Icons/MainLogo";
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
-import Button from "../Button";
 import Particles from "react-particles-js";
 import { withTranslation } from "i18n.js";
 
@@ -13,9 +12,9 @@ function Introduction({ t }) {
     router.push("/#Contactme");
   };
 
-  const getYears = () => {
+  const getYears = (date) => {
     let today = new Date();
-    let beginDate = new Date("2017/01/26 11:30:00");
+    let beginDate = new Date(date);
     let experience = today.getFullYear() - beginDate.getFullYear();
     let diff = today.getMonth() - beginDate.getMonth();
     if (diff < 0 || (diff === 0 && today.getDate() < beginDate.getDate())) {
@@ -33,11 +32,23 @@ function Introduction({ t }) {
         <section className='introductionContent d-flex flex-column align-items-center justify-content-center'>
           <h1 className='backgroundSolid'>SEBASTIAN BETANCUR SALAZAR</h1>
           <p className='info backgroundSolid mb-5'>
-            🇨🇴 {t("introduction:Actually").replace("{0}", getYears())}
+            🇨🇴{" "}
+            {t("introduction:Actually").replace(
+              "{0}",
+              getYears("2017/01/26 11:30:00")
+            )}{" "}
+            <br />
+            <span className='d-block w-100 text-center'>
+              👨‍💻{" "}
+              {t("introduction:Im").replace(
+                "{0}",
+                getYears("1997/12/31 11:30:00")
+              )}
+            </span>
           </p>
           <div className='d-flex align-items-center justify-content-center'>
             <a
-              className='buttonP backgroundSolid mt-5'
+              className='bContactMe backgroundSolid mt-5'
               href='#'
               onClick={handleClick}
             >
@@ -118,7 +129,7 @@ function Introduction({ t }) {
           z-index: -100;
         }
 
-        .buttonP {
+        .bContactMe {
           text-decoration: none;
           color: ${colors.primary_highlight};
           font-size: ${fontSizes.font_size_md};
@@ -133,7 +144,7 @@ function Introduction({ t }) {
           min-width: max-content;
         }
 
-        .buttonP:hover {
+        .bContactMe:hover {
           color: white;
           border-bottom: 0;
           background: ${colors.primary};
@@ -142,12 +153,12 @@ function Introduction({ t }) {
           transition-delay: 0.5s;
         }
 
-        .buttonP span {
+        .bContactMe span {
           position: absolute;
           display: block;
         }
 
-        .buttonP span:nth-child(1) {
+        .bContactMe span:nth-child(1) {
           top: 0;
           left: -100%;
           width: 100%;
@@ -155,12 +166,12 @@ function Introduction({ t }) {
           background: linear-gradient(90deg, transparent, ${colors.primary});
         }
 
-        .buttonP:hover span:nth-child(1) {
+        .bContactMe:hover span:nth-child(1) {
           left: 100%;
           transition: 1s;
         }
 
-        .buttonP span:nth-child(3) {
+        .bContactMe span:nth-child(3) {
           bottom: 0;
           right: -100%;
           width: 100%;
@@ -168,7 +179,7 @@ function Introduction({ t }) {
           background: linear-gradient(270deg, transparent, ${colors.primary});
         }
 
-        .buttonP:hover span:nth-child(3) {
+        .bContactMe:hover span:nth-child(3) {
           right: 100%;
           transition: 0.5s;
         }
@@ -181,7 +192,7 @@ function Introduction({ t }) {
               margin-top: 0.5rem;
             }
 
-            .buttonP {
+            .bContactMe {
               color: white;
               border-bottom: 0;
               background: ${colors.primary};
@@ -189,9 +200,7 @@ function Introduction({ t }) {
             }
 
             .particles {
-               {
-                /* display: none; */
-              }
+               display:none;
             }
           }
         }

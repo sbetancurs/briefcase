@@ -1,35 +1,67 @@
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
+import { withTranslation } from "i18n.js";
 
-export default function Expertisies() {
+const Expertisies = ({ t }) => {
+  const getFormatText = (text) => {
+    let textArray = text.split("\\");
+    textArray.map();
+  };
   return (
     <>
-      <article className='d-flex flex-column py-3'>
+      <article className='d-flex flex-column py-5 min-vh-100'>
         <section className='d-flex align-items-center justify-content-center mb-3'>
           <span className='main-title mt-5'>
             <span></span>
-            <p>My Expertisie</p>
+            <p>{t("expertisie:MyExpertisie")}</p>
           </span>
         </section>
-        <section className='expertise cards'>
-          <div className='card csharp'>
-            <h1 className='display-4'>C Sharp</h1>
-            <p className='lead'>ASP .NET, .NET Core, Razor pages, WPF</p>
-            <p className='lead'>MVC, MVVM, APIS and multiple libraries.</p>
+        <section id='cards' className='row justify-content-center'>
+          <div className='box'>
+            <span></span>
+            <span></span>
+            <div className='content d-flex flex-column  align-items-center justify-content-center'>
+              <div className='iconContainer'>
+                <img className='icon' src='/icons/csharp.svg' />
+              </div>
+              <label>C Sharp</label>
+              <p>{t("expertisie:CSharp")}</p>
+            </div>
           </div>
-          <div className='card javascript'>
-            <h1 className='title'>JavaScript</h1>
-            <p>Javascript including ES2015.</p>
-            <p>Javascript MV* frameworks.</p>
+
+          <div className='box'>
+            <span></span>
+            <span></span>
+            <div className='content d-flex flex-column  align-items-center justify-content-center'>
+              <div className='iconContainer'>
+                <img className='icon' src='/icons/html-css-javascript.svg' />
+              </div>
+              <label>HTML-CSS-JS</label>
+              <p>{t("expertisie:HTML-CSS-JS")}</p>
+            </div>
           </div>
-          <div className='card html-css'>
-            <h1 className='title'>HTML / CSS</h1>
-            <p>HTML5 and related APIs</p>
-            <p>CSS including CSS3 and SASS</p>
+
+          <div className='box'>
+            <span></span>
+            <span></span>
+            <div className='content d-flex flex-column  align-items-center justify-content-center'>
+              <div className='iconContainer'>
+                <img className='icon' src='/icons/database.svg' />
+              </div>
+              <label>{t("expertisie:DatabaseTitle")}</label>
+              <p>{t("expertisie:Database")}</p>
+            </div>
           </div>
-          <div className='card react'>
-            <h1 className='title'>React</h1>
-            <p>React, Hooks, and multiple React libraries.</p>
-            <p>Redux and multiple Redux libraries.</p>
+
+          <div className='box'>
+            <span></span>
+            <span></span>
+            <div className='content d-flex flex-column  align-items-center justify-content-center'>
+              <div className='iconContainer'>
+                <img className='icon' src='/icons/react.svg' />
+              </div>
+              <label>React</label>
+              <p>{t("expertisie:React")}</p>
+            </div>
           </div>
         </section>
         <section className='d-none expertise skills'>
@@ -55,9 +87,8 @@ export default function Expertisies() {
           background: linear-gradient(
             to bottom,
             ${colors.backgroundPrimary} 0%,
-            ${colors.backgroundPrimary} 50%,
-            #111112 50%,
-            #111112 100%
+            rgba(0, 0, 34, 1) 65%,
+            ${colors.backgroundSecondary} 100%
           );
           color: ${colors.white};
         }
@@ -98,67 +129,138 @@ export default function Expertisies() {
           transition: 0.5s;
         }
 
-        .expertise.cards {
+        #cards {
+          margin-right: 0;
+        }
+        .box {
+          align-items: center;
+          background-color: #191c1f;
+          color: white;
           display: flex;
-          flex-direction: row;
+          flex-wrap: wrap;
+          height: 450px;
           justify-content: center;
+          margin: 40px;
+          padding: 20px;
+          position: relative;
+          width: 350px;
+
+          -webkit-transition: 0.5s;
         }
-        .card {
-          background-color: #111112;
-          border: 3px solid ${colors.primary};
-          box-shadow: -15px 15px 0 -3px #111112, -15px 15px ${colors.primary},
-            -20px 20px 0 3px #111112;
-          cursor: pointer;
+        .box:hover {
+          box-shadow: 0 0px 20px ${colors.primary};
+          transform: scale(1.15);
+          -webkit-transition: 1s;
+        }
+        .content:hover {
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          padding: 40px !important;
+          padding-top: 0 !important;
+          -webkit-transition: 1s;
+        }
+        .box .content {
+          border: 1px solid slategrey;
+          bottom: 15px;
+          box-shadow: 0 5px 10px rgba(9, 0, 0, 0.1);
+          left: 15px;
+          padding: 20px;
+          padding-top: 0;
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          -webkit-transition: 1s;
+        }
+        .content label {
+          font-weight: bold;
+          font-size: ${fontSizes.font_size_md};
+        }
+        .content p {
+          white-space: pre-line;
+          min-width: 100%;
+          width: 100%;
+          max-width: 100%;
+        }
+        .box span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
           display: block;
-          margin: calc(50vh - 30px) auto 0 auto;
-          min-height: 90px;
-          padding: 15px;
-          width: 300px;
+          box-sizing: border-box;
+        }
+        .iconContainer {
+          width: 100%;
+          height: 200px;
+          display: grid;
+          place-items: center;
+        }
+        .icon {
+          width: 200px;
+          height: 200px;
+        }
+        .box span:nth-child(1) {
+          transform: rotate(0deg);
         }
 
-        .expertise.skills {
-          display: flex;
-          flex-direction: column;
-          padding: 50px 500px;
-          widht: 100%;
-        }
-        .skills.title {
-          color: ${colors.white};
-          font-size: ${fontSizes.font_size_xl};
+        .box span:nth-child(2) {
+          transform: rotate(180deg);
         }
 
-        .skills.content p {
-          margin-bottom: 20px;
-          font-size: ${fontSizes.font_size_xs};
+        .box span:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background: ${colors.primary};
+          animation: animate 4s linear infinite;
         }
 
-        @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
-          article {
-            width: ${breakpoints.pc};
+        @keyframes animate {
+          0% {
+            transform: scaleX(0);
+            transform-origin: left;
           }
-          .expertise.skills {
-            align-items: center;
-            padding: 20px 50px;
+
+          50% {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+
+          50.1% {
+            transform: scaleX(1);
+            transform-origin: right;
+          }
+
+          100% {
+            transform: scaleX(0);
+            transform-origin: right;
           }
         }
 
         @media (max-width: ${breakpoints.mobile}) {
-          article {
-            width: ${breakpoints.mobile};
+          .box.content {
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            top: 15px;
           }
-          hr {
-            width: 50%;
+
+          .box {
+            width: 450px;
+            height: 510px;
           }
-          .expertise.cards {
-            flex-direction: column;
-            align-items: center;
-          }
-          .expertise.skills {
-            align-items: center;
-            padding: 20px 50px;
+
+          .main-title {
+            letter-spacing: 0;
           }
         }
       `}</style>
     </>
   );
-}
+};
+
+export default withTranslation(["common", "expertisie"])(Expertisies);

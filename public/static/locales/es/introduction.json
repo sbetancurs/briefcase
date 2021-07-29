@@ -1,6 +1,4 @@
 {
-  "hello": "Hola",
-  "Im": "Soy",
-  "WebDeveloper": "desarrollador web",
+  "Im": "Tengo {0} años.",
   "Actually": "Desarrollador Web fullstack con {0} años de experiencia."
 }

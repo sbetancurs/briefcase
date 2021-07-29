@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles, { globalStyles } from "./styles";
+import ScrollToTop from "components/ScrollToTop";
 
 export default function AppLayout({ children }) {
   return (
@@ -15,7 +16,10 @@ export default function AppLayout({ children }) {
         />
       </Head>
       <div>
-        <main>{children}</main>
+        <main>
+          {children}
+          <ScrollToTop />
+        </main>
       </div>
       <style jsx>{styles}</style>
       <style jsx global>
