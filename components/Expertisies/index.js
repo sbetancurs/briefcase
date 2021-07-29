@@ -3,40 +3,36 @@ import { breakpoints, colors, fontSizes } from "../../styles/theme";
 export default function Expertisies() {
   return (
     <>
-      <article>
-        <section className='main-title'>
-          <h2>My Expertise</h2>
-          <hr />
+      <article className='d-flex flex-column py-3'>
+        <section className='d-flex align-items-center justify-content-center mb-3'>
+          <span className='main-title mt-5'>
+            <span></span>
+            <p>My Expertisie</p>
+          </span>
         </section>
         <section className='expertise cards'>
           <div className='card csharp'>
-            <h1 className='title'>C Sharp</h1>
-            <h2 className='subtitle'>4 years experience</h2>
-            <p>ASP .NET, .NET Core, Razor pages, WPF</p>
-            <p>MVC, MVVM, APIS and multiple libraries.</p>
+            <h1 className='display-4'>C Sharp</h1>
+            <p className='lead'>ASP .NET, .NET Core, Razor pages, WPF</p>
+            <p className='lead'>MVC, MVVM, APIS and multiple libraries.</p>
           </div>
           <div className='card javascript'>
             <h1 className='title'>JavaScript</h1>
-            <h2 className='subtitle'>4 years experience</h2>
             <p>Javascript including ES2015.</p>
             <p>Javascript MV* frameworks.</p>
           </div>
-        </section>
-        <section className='expertise cards'>
           <div className='card html-css'>
             <h1 className='title'>HTML / CSS</h1>
-            <h2 className='subtitle'>4 years experience</h2>
             <p>HTML5 and related APIs</p>
             <p>CSS including CSS3 and SASS</p>
           </div>
           <div className='card react'>
             <h1 className='title'>React</h1>
-            <h2 className='subtitle'>1 years experience</h2>
             <p>React, Hooks, and multiple React libraries.</p>
             <p>Redux and multiple Redux libraries.</p>
           </div>
         </section>
-        <section className='expertise skills'>
+        <section className='d-none expertise skills'>
           <h3 className='skills title'>Skills</h3>
           <div className='skills content'>
             <p>
@@ -56,120 +52,70 @@ export default function Expertisies() {
       </article>
       <style jsx>{`
         article {
-          background-color: ${colors.backgroundSecondary};
+          background: linear-gradient(
+            to bottom,
+            ${colors.backgroundPrimary} 0%,
+            ${colors.backgroundPrimary} 50%,
+            #111112 50%,
+            #111112 100%
+          );
           color: ${colors.white};
-          display: flex;
-          flex-direction: column;
-          padding: 50px 0;
-        }
-        h2 {
-          margin-bottom: 0;
-        }
-        hr {
-          width: 16%;
-          margin: 20px 0;
         }
         .main-title {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
+          display: block;
           font-size: ${fontSizes.font_size_lg};
+          letter-spacing: 4px;
+          overflow: hidden;
+          padding: 15px 25px;
+          position: relative;
+          transition: 0, 2s;
+        }
+        @keyframes slidein {
+          from {
+            left: -100%;
+          }
+
+          to {
+            left: 100%;
+          }
+        }
+        .main-title span {
+          animation-duration: 1.5s;
+          animation-iteration-count: infinite;
+          animation-name: slidein;
+          display: block;
+          position: absolute;
+        }
+        .main-title span:nth-child(1) {
+          background: linear-gradient(90deg, transparent, ${colors.white});
+          bottom: 0;
+          height: 2px;
+          left: -100%;
           width: 100%;
         }
-        .title {
-          font-size: ${fontSizes.font_size_md};
-          margin-bottom: 20px;
-          text-align: left;
-          white-space: nowrap;
-          color: ${colors.secondary};
+        .main-title:hover span:nth-child(1) {
+          left: 100%;
+          transition: 0.5s;
         }
-        .subtitle {
-          font-size: ${fontSizes.font_size_sm};
-          margin-bottom: 20px;
-          color: ${colors.secondary};
-        }
+
         .expertise.cards {
           display: flex;
           flex-direction: row;
           justify-content: center;
         }
         .card {
-          max-width: 400px;
-          position: relative;
-          padding: 20px;
-          margin: 20px;
-          border-radius: 12px;
-          box-shadow: 2px 8px 15px 10px rgba(0, 0, 0, 0.05),
-            4px 5px 10px 0 rgba(0, 0, 0, 0.1),
-            2px 2px 5px 2px rgba(0, 0, 0, 0.25);
-        }
-        .card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          border-radius: 12px;
-          opacity: 0.2;
-        }
-        .card h1,
-        .card h2,
-        .card p {
-          position: relative;
+          background-color: #111112;
+          border: 3px solid ${colors.primary};
+          box-shadow: -15px 15px 0 -3px #111112, -15px 15px ${colors.primary},
+            -20px 20px 0 3px #111112;
+          cursor: pointer;
+          display: block;
+          margin: calc(50vh - 30px) auto 0 auto;
+          min-height: 90px;
+          padding: 15px;
+          width: 300px;
         }
 
-        .card p {
-          color: ${colors.white};
-          font-size: ${fontSizes.font_size_sm};
-          text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-          margin-bottom: 20px;
-        }
-
-        .card .title {
-          text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2);
-          white-space: nowrap;
-          font-weight: 900;
-        }
-        .card.javascript {
-          background: linear-gradient(-45deg, #b7791f 0%, #ecc94b 100%);
-        }
-
-        .card.javascript::before {
-          background: url("/icons/javascript.svg") no-repeat;
-          background-size: 100%;
-          background-position: calc(100% + 50px) calc(100% + 50px);
-        }
-
-        .card.html-css {
-          background: linear-gradient(-45deg, #dd6b20 0%, #f6ad55 100%);
-        }
-
-        .card.html-css::before {
-          background: url("/icons/html.svg") no-repeat;
-          background-size: 100%;
-          background-position: calc(100% + 50px) calc(100% + 50px);
-        }
-
-        .card.react {
-          background: linear-gradient(-45deg, #3182ce 0%, #63b3ed 100%);
-        }
-
-        .card.react::before {
-          background: url("/icons/react.svg") no-repeat;
-          background-size: 100%;
-          background-position: calc(100% + 50px) calc(100% + 50px);
-        }
-
-        .card.csharp {
-          background: linear-gradient(-45deg, #300083 0%, #9d6dd7 100%);
-        }
-
-        .card.csharp::before {
-          background: url("/icons/csharp.svg") no-repeat;
-          background-size: 100%;
-          background-position: calc(100% + 50px) calc(100% + 50px);
-        }
         .expertise.skills {
           display: flex;
           flex-direction: column;

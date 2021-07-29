@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <TopMenu />
       <Introduction />
-      <Biography />
+      {/* <Biography /> */}
       <Expertisies />
       <Contactme />
       <Footer />

@@ -172,23 +172,7 @@ function Introduction({ t }) {
           right: 100%;
           transition: 0.5s;
         }
-
-         {
-          /* @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
-          article {
-            width: ${breakpoints.pc};
-          }
-          .particles {
-            display: none;
-          }
-        }
-
-        @media (min-width: ${breakpoints.pc}) {
-          article {
-            height: 100vh;
-          }
-        }
-*/
+        
           @media (max-width: ${breakpoints.mobile}) {
             h1 {
               font-size: ${fontSizes.font_size_sm};
