@@ -5,7 +5,7 @@ import { breakpoints, colors, fonts } from "../../styles/theme";
 export const globalStyles = css.global`
   html,
   body {
-    background-color: ${colors.backgroundPrimary};
+    background-color: ${colors.background_primary};
     background-position: 0 0, 25px 25px;
     background-size: 50px 50px;
     padding: 0;

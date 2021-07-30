@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import MainLogo from "../Icons/MainLogo";
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
 import Particles from "react-particles-js";
+import Button from "components/Button";
 import { withTranslation } from "i18n.js";
 
 function Introduction({ t }) {
@@ -47,17 +48,9 @@ function Introduction({ t }) {
             </span>
           </p>
           <div className='d-flex align-items-center justify-content-center'>
-            <a
-              className='bContactMe backgroundSolid mt-5'
-              href='#'
-              onClick={handleClick}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+            <Button onClick={handleClick}>
               <p>{t("Contactme")}</p>
-            </a>
+            </Button>
           </div>
         </section>
         <div className='particles'>
@@ -111,7 +104,7 @@ function Introduction({ t }) {
           z-index: 100;
         }
         .backgroundSolid {
-          background-color: ${colors.backgroundPrimary};
+          background-color: ${colors.background_primary};
         }
         .info {
           color: ${colors.primary_highlight};
@@ -128,63 +121,8 @@ function Introduction({ t }) {
           position: absolute;
           z-index: -100;
         }
-
-        .bContactMe {
-          text-decoration: none;
-          color: ${colors.primary_highlight};
-          font-size: ${fontSizes.font_size_md};
-          letter-spacing: 4px;
-          overflow: hidden;
-          transition: 0, 2s;
-          padding: 15px 25px;
-          position: absolute;
-          display: block;
-          border-radius: 2px;
-          border-bottom: 1px solid ${colors.primary};
-          min-width: max-content;
-        }
-
-        .bContactMe:hover {
-          color: white;
-          border-bottom: 0;
-          background: ${colors.primary};
-          box-shadow: 0 0 10px ${colors.primary}, 0 0 30px ${colors.primary},
-            0 0 80px ${colors.primary};
-          transition-delay: 0.5s;
-        }
-
-        .bContactMe span {
-          position: absolute;
-          display: block;
-        }
-
-        .bContactMe span:nth-child(1) {
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, ${colors.primary});
-        }
-
-        .bContactMe:hover span:nth-child(1) {
-          left: 100%;
-          transition: 1s;
-        }
-
-        .bContactMe span:nth-child(3) {
-          bottom: 0;
-          right: -100%;
-          width: 100%;
-          height: 2px;
-          background: linear-gradient(270deg, transparent, ${colors.primary});
-        }
-
-        .bContactMe:hover span:nth-child(3) {
-          right: 100%;
-          transition: 0.5s;
-        }
         
-          @media (max-width: ${breakpoints.mobile}) {
+          @media (max-width: ${breakpoints.mobile}), (max-width: ${breakpoints.ipad}) {
             h1 {
               font-size: ${fontSizes.font_size_sm};
             }
@@ -192,15 +130,8 @@ function Introduction({ t }) {
               margin-top: 0.5rem;
             }
 
-            .bContactMe {
-              color: white;
-              border-bottom: 0;
-              background: ${colors.primary};
-              box-shadow: 0 0 10px ${colors.primary};
-            }
-
             .particles {
-               display:none;
+              display:none;
             }
           }
         }

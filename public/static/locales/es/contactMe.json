@@ -5,5 +5,7 @@
   "name": "Nombre",
   "email": "Correo electrónico",
   "message": "Mensaje",
-  "send": "Enviar"
+  "send": "Enviar",
+  "loading": "Cargando",
+  "alert": "Opps, lo siento! Estoy trabajando en mejorar esta función de enviar email."
 }

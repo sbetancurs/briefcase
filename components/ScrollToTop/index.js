@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { breakpoints, colors, fontSizes } from "../../styles/theme";
+import { colors } from "../../styles/theme";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);

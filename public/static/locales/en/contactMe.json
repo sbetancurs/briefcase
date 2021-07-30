@@ -1,8 +1,11 @@
 {
   "contactMe": "Contact me!",
-  "description": "If you are interested on my services or knowledge, you can send me an email, I will answer you in less possible time.",
+  "description": "With my knowledge I seek to help people and / or companies that have fun and innovative projects in mind. If you are interested in my services or knowledge, please send me an email, I will respond in the shortest time possible.  NWe will be able to talk about your ideas and how to carry them out with the help of my knowledge on the web.",
+  "followMe": "Follow me!",
   "name": "Name",
   "email": "Email",
   "message": "Message",
-  "send": "Send"
+  "send": "Send",
+  "loading": "Loading",
+  "alert": "Opps, sorry! I'm working on improving this send email feature."
 }
