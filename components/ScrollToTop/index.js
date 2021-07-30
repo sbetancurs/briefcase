@@ -55,6 +55,7 @@ export default function ScrollToTop() {
           width: 65px;
           font-size: 4rem;
           padding-bottom: 0.5rem;
+          text-decoration: none;
         }
       `}</style>
     </>
