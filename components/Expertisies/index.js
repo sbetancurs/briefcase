@@ -29,7 +29,7 @@ const Expertisies = ({ t }) => {
           />
 
           <Card
-            srcIcon='/icons/database.svg'
+            srcIcon='/icons/DATABASE.svg'
             title={t("expertisie:DatabaseTitle")}
             description={t("expertisie:Database")}
           />
