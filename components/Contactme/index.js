@@ -34,13 +34,11 @@ const ContactMe = ({ t }) => {
     setLoading(true);
 
     setTimeout(function () {
-      alert(
-        t("contactMe:alert")
-      );
+      alert(t("contactMe:alert"));
       setLoading(false);
       setFormValues(initialValues);
       return;
-    }, 3000);
+    }, 500);
 
     return;
 
@@ -64,7 +62,6 @@ const ContactMe = ({ t }) => {
     <>
       <article id='Contactme' className='d-flex flex-column py-5 min-vh-75'>
         <section className='container d-flex flex-column'>
-          {loading && <Loader />}
           <section className='d-flex align-items-start  mb-3'>
             <Title classNames='mb-5' text={t("contactMe:contactMe") + " 📧"} />
           </section>
