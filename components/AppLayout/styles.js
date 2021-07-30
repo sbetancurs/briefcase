@@ -5,12 +5,13 @@ import { breakpoints, colors, fonts } from "../../styles/theme";
 export const globalStyles = css.global`
   html,
   body {
-    background-color: ${colors.backgroundPrimary};
+    background-color: ${colors.background_primary};
     background-position: 0 0, 25px 25px;
     background-size: 50px 50px;
     padding: 0;
     margin: 0;
-    font-family: ${fonts.base};
+    font-family: "Martel", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
   }
   * {
     box-sizing: border-box;

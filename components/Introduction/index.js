@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import MainLogo from "../Icons/MainLogo";
 import { breakpoints, colors, fontSizes } from "../../styles/theme";
-import Button from "../Button";
 import Particles from "react-particles-js";
+import Button from "components/Button";
 import { withTranslation } from "i18n.js";
 
 function Introduction({ t }) {
@@ -13,46 +13,85 @@ function Introduction({ t }) {
     router.push("/#Contactme");
   };
 
+  const getYears = (date) => {
+    let today = new Date();
+    let beginDate = new Date(date);
+    let experience = today.getFullYear() - beginDate.getFullYear();
+    let diff = today.getMonth() - beginDate.getMonth();
+    if (diff < 0 || (diff === 0 && today.getDate() < beginDate.getDate())) {
+      experience--;
+    }
+    return experience;
+  };
+
   return (
     <>
-      <article>
-        <section className='introductionContent'>
-          <h1>
-            <span style={{ color: `${colors.primary}` }}>
-              {t("introduction:hello")},
-            </span>
-            <br /> {t("introduction:Im")} Sebastian, <br />
-            {t("introduction:WebDeveloper")}. <br />
-          </h1>
-          <p className='info'>🇨🇴 {t("introduction:Actually")}.</p>
-          <hr />
-          <Button onClick={handleClick}>
-            <p>{t("Contactme")}</p>
-          </Button>
+      <article className='container d-flex flex-column justify-content-center min-vh-100 pt-5'>
+        <section className='d-flex justify-content-center'>
+          <MainLogo width={200} height={200} />
         </section>
-        <section className='introductionLogo'>
-          <MainLogo width={500} height={500} />
+        <section className='introductionContent d-flex flex-column align-items-center justify-content-center'>
+          <h1 className='backgroundSolid'>SEBASTIAN BETANCUR SALAZAR</h1>
+          <p className='info backgroundSolid mb-5'>
+            🇨🇴{" "}
+            {t("introduction:Actually").replace(
+              "{0}",
+              getYears("2017/01/26 11:30:00")
+            )}{" "}
+            <br />
+            <span className='d-block w-100 text-center'>
+              👨‍💻{" "}
+              {t("introduction:Im").replace(
+                "{0}",
+                getYears("1997/12/31 11:30:00")
+              )}
+            </span>
+          </p>
+          <div className='d-flex align-items-center justify-content-center'>
+            <Button onClick={handleClick}>
+              <p>{t("Contactme")}</p>
+            </Button>
+          </div>
         </section>
         <div className='particles'>
           <Particles
             params={{
               particles: {
                 number: {
-                  value: 80,
-                  density: {
-                    enable: true,
-                    value_area: 800,
+                  value: 250,
+                },
+                size: {
+                  value: 3,
+                  random: true,
+                  anim: {
+                    speed: 4,
+                    size_min: 0.3,
                   },
+                },
+                line_linked: {
+                  enable: false,
+                },
+                move: {
+                  random: true,
+                  speed: 1,
+                  direction: "top",
+                  out_mode: "out",
                 },
               },
               interactivity: {
-                detect_on: "canvas",
                 events: {
                   onhover: {
                     enable: true,
-                    mode: "grab",
+                    mode: "bubble",
                   },
-                  resize: true,
+                },
+                modes: {
+                  bubble: {
+                    distance: 150,
+                    duration: 2,
+                    size: 0,
+                    opacity: 0,
+                  },
                 },
               },
             }}
@@ -61,25 +100,19 @@ function Introduction({ t }) {
       </article>
       <style jsx>{`
         article {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          margin-top: 30px;
-          padding: 40px 60px;
+          background-color: ##111112;
           z-index: 100;
         }
-        hr {
-          margin: 20px 0;
+        .backgroundSolid {
+          background-color: ${colors.background_primary};
         }
         .info {
           color: ${colors.primary_highlight};
-          font-size: ${fontSizes.font_size_sm};
+          font-size: ${fontSizes.font_size_xs};
         }
         .introductionContent {
-          align-self: center;
           color: ${colors.white};
           font-size: ${fontSizes.font_size_lg};
-          width: 100%;
         }
         .particles {
           left: 0;
@@ -88,38 +121,18 @@ function Introduction({ t }) {
           position: absolute;
           z-index: -100;
         }
-        .introductionLogo {
-          color: ${colors.white};
-          display: grid;
-          font-size: ${fontSizes.font_size_lg};
-          text-align: center;
-          width: 100%;
-          place-items: center;
-        }
+        
+          @media (max-width: ${breakpoints.mobile}), (max-width: ${breakpoints.ipad}) {
+            h1 {
+              font-size: ${fontSizes.font_size_sm};
+            }
+            .info {
+              margin-top: 0.5rem;
+            }
 
-        @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
-          article {
-            width: ${breakpoints.pc};
-            height: 100vh;
-          }
-          .particles {
-            display: none;
-          }
-        }
-
-        @media (min-width: ${breakpoints.pc}) {
-          article {
-            height: 90vh;
-          }
-        }
-
-        @media (max-width: ${breakpoints.mobile}) {
-          article {
-            flex-direction: column;
-            width: ${breakpoints.mobile};
-          }
-          .particles {
-            display: none;
+            .particles {
+              display:none;
+            }
           }
         }
       `}</style>

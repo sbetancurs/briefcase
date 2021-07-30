@@ -1,6 +1,4 @@
 {
-  "hello": "Hola",
-  "Im": "Soy",
-  "WebDeveloper": "desarrollador web",
-  "Actually": "Actualmente desarrollador fullstack en Sourcecol SAS"
+  "Im": "Tengo {0} años.",
+  "Actually": "Desarrollador Web fullstack con {0} años de experiencia."
 }

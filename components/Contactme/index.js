@@ -4,10 +4,13 @@ import Input from "components/Input";
 import InputArea from "components/InputArea";
 import Button from "components/Button";
 import Loader from "components/Loader";
+import Title from "components/Title";
 
-import { breakpoints, colors, fontSizes } from "../../styles/theme";
+import { colors, fontSizes } from "../../styles/theme";
 
-export default function ContactMe() {
+import { withTranslation } from "i18n.js";
+
+const ContactMe = ({ t }) => {
   const initialValues = {
     name: "",
     email: "",
@@ -30,6 +33,15 @@ export default function ContactMe() {
     e.preventDefault();
     setLoading(true);
 
+    setTimeout(function () {
+      alert(t("contactMe:alert"));
+      setLoading(false);
+      setFormValues(initialValues);
+      return;
+    }, 500);
+
+    return;
+
     fetch("/api/contactme", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, cors, *same-origin
@@ -48,74 +60,104 @@ export default function ContactMe() {
 
   return (
     <>
-      <article id='Contactme'>
-        {loading && <Loader />}
-        <h2>Contact Me!</h2>
-        <p className='contactMeText'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          error natus velit voluptas porro sed asperiores maxime at eveniet
-          totam, iure expedita. Quia, aut provident? Provident voluptatem
-          maiores perferendis possimus.
-        </p>
-        <section className='contact'>
-          <div className='links'>
-            <h3>Follow me</h3>
-            <ul>
-              <li>
-                <img src='/icons/instagram.svg' alt='twitter' />
-                <a href='https://instagram.com'>Instagram</a>
-              </li>
-              <li>
-                <img src='/icons/twitter.svg' alt='twitter' />
-                <a href='https://twitter.com'>Twitter</a>
-              </li>
-              <li>
-                <img src='/icons/linkedin.svg' alt='linkedin' />
-                <a href='https://linkedin.com'>LinkedIn</a>
-              </li>
-            </ul>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <Input
-              name='name'
-              value={formValues.name}
-              placeholder='Nombre'
-              type='text'
-              onChange={handleChange}
-            />
-            <Input
-              name='email'
-              value={formValues.email}
-              placeholder='Correo electrónico'
-              type='email'
-              onChange={handleChange}
-            />
-            <InputArea
-              name='message'
-              value={formValues.message}
-              placeholder='Mensaje'
-              type='text'
-              onChange={handleChange}
-            />
-            <Button disabled={loading} width='100%'>
-              <p>send</p>
-            </Button>
-          </form>
+      <article id='Contactme' className='d-flex flex-column py-5 min-vh-75'>
+        <section className='container d-flex flex-column'>
+          <section className='d-flex align-items-start  mb-3'>
+            <Title classNames='mb-5' text={t("contactMe:contactMe") + " 📧"} />
+          </section>
+          <p className='contactMeText mb-5'>{t("contactMe:description")}</p>
+          <section className='row'>
+            <div className='col-lg-4 col-12'>
+              <h3>{t("contactMe:followMe")} 🔥</h3>
+              <ul>
+                <li>
+                  <img src='/icons/instagram.svg' alt='twitter' />
+                  <a
+                    href='https://www.instagram.com/sebastianbetancur97/'
+                    alt='instagram'
+                    target='_blank'
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <img src='/icons/superprof.svg' alt='twitter' />
+                  <a
+                    href='https://www.superprof.co/panel-de-control.html/mis-anuncios/edicion/8117620'
+                    alt='superprof'
+                    target='_blank'
+                  >
+                    Superprof
+                  </a>
+                </li>
+                <li>
+                  <img
+                    src='/icons/linkedin.svg'
+                    alt='linkedin'
+                    target='_blank'
+                  />
+                  <a href='https://linkedin.com'>LinkedIn</a>
+                </li>
+              </ul>
+            </div>
+            <div className='col-lg-8 col-12 my-md-5'>
+              <div className='box position-relative py-2 px-4'>
+                <span className='line'></span>
+                <span className='line'></span>
+                <form onSubmit={handleSubmit} className='content py-2'>
+                  <Input
+                    name='name'
+                    value={formValues.name}
+                    placeholder={t("contactMe:name")}
+                    type='text'
+                    onChange={handleChange}
+                  />
+                  <Input
+                    name='email'
+                    value={formValues.email}
+                    placeholder={t("contactMe:email")}
+                    type='email'
+                    onChange={handleChange}
+                  />
+                  <InputArea
+                    name='message'
+                    value={formValues.message}
+                    placeholder={t("contactMe:message")}
+                    type='text'
+                    onChange={handleChange}
+                  />
+                  <Button
+                    disabled={loading}
+                    classNames={
+                      "inForm mb-2 " + (loading ? "d-none" : "d-block")
+                    }
+                  >
+                    <p>{t("contactMe:send")}</p>
+                  </Button>
+                  <div
+                    className={"fontSize " + (!loading ? "d-none" : "d-block")}
+                  >
+                    <span
+                      className='spinner-border spinner-border-sm '
+                      role='status'
+                      aria-hidden='true'
+                    ></span>{" "}
+                    {t("contactMe:loading")}...
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
         </section>
       </article>
       <style jsx>
         {`
           article {
-            background: ${colors.third};
+            background: ${colors.background_secondary};
             color: ${colors.white};
-            display: flex;
-            flex-direction: column;
-            padding: 50px 500px;
-            width: 100%;
           }
           h2 {
             font-size: ${fontSizes.font_size_lg};
-            margin-bottom: 30px;
           }
           h3 {
             white-space: nowrap;
@@ -123,21 +165,66 @@ export default function ContactMe() {
           }
           .contactMeText {
             font-size: ${fontSizes.font_size_xs};
-            margin-bottom: 50px;
+            white-space: pre-line;
           }
-          .contact {
-            display: flex;
-            flex-direction: row;
-            height: 100%;
+          .box {
+            background: transparent;
           }
-          .links {
-            margin-right: 50px;
+          .content {
+            z-index: 1000;
+            position: relative;
           }
-          form {
-            background: ${colors.backgroundSecondary};
-            padding: 20px 50px;
+          .fontSize {
+            font-size: ${fontSizes.font_size_sm};
+          }
+          .box span.line {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            display: block;
+            box-sizing: border-box;
           }
+          .box span.line:nth-child(1) {
+            transform: rotate(0deg);
+          }
+
+          .box span.line:nth-child(2) {
+            transform: rotate(180deg);
+          }
+
+          .box span.line:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: ${colors.primary};
+            animation: animate 4s linear infinite;
+          }
+
+          @keyframes animate {
+            0% {
+              transform: scaleX(0);
+              transform-origin: left;
+            }
+
+            50% {
+              transform: scaleX(1);
+              transform-origin: left;
+            }
+
+            50.1% {
+              transform: scaleX(1);
+              transform-origin: right;
+            }
+
+            100% {
+              transform: scaleX(0);
+              transform-origin: right;
+            }
+          }
+
           li {
             padding: 10px 0;
           }
@@ -146,21 +233,6 @@ export default function ContactMe() {
           }
           a {
             color: ${colors.white};
-          }
-          @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
-            article {
-              width: ${breakpoints.pc};
-              padding: 20px 50px;
-            }
-          }
-          @media (max-width: ${breakpoints.mobile}) {
-            article {
-              width: ${breakpoints.mobile};
-              padding: 20px 50px;
-            }
-            .contact {
-              flex-direction: column;
-            }
           }
         `}
       </style>
@@ -175,4 +247,6 @@ export default function ContactMe() {
       `}</style>
     </>
   );
-}
+};
+
+export default withTranslation(["common", "contactMe"])(ContactMe);

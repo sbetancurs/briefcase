@@ -7,39 +7,44 @@ import useTranslation from "hooks/useTranslation";
 
 export default function TopMenu() {
   const [language, changeLanguage] = useTranslation();
-  console.log(language);
   const handleClick = (e, lg) => {
     e.preventDefault();
     changeLanguage(lg);
   };
 
+  const esActive = language === "es";
+
   return (
     <>
-      <nav>
+      <nav className='d-flex flex-lg-column align-items-start justify-content-end position-fixed'>
         <button
-          style={{ background: language === "es" ? "#009" : "transparent" }}
+          className={esActive ? "bActive" : "bDesactive"}
           onClick={(e) => handleClick(e, "es")}
         >
-          <Colombia width='40' height='40' />
+          <img
+            className={"icon " + (esActive ? "animationOn" : "animationOff")}
+            src='/icons/colombia.svg'
+          />
         </button>
         <button
-          style={{ background: language === "en" ? "#009" : "transparent" }}
+          className={!esActive ? "bActive" : "bDesactive"}
           onClick={(e) => handleClick(e, "en")}
         >
-          <Usa width='40' height='40' />
+          <img
+            className={"icon " + (!esActive ? "animationOn" : "animationOff")}
+            src='/icons/usa.svg'
+          />
         </button>
       </nav>
       <style jsx>{`
         nav {
-          backdrop-filter: blur(5px);
-          background: #00002294;
-          display: flex;
-          height: 60px;
-          justify-content: flex-end;
-          outline: 0;
-          position: fixed;
-          width: 100%;
+          top: 40vh;
+          border-top-right-radius: 120%;
+          border-bottom-right-radius: 120%;
+          padding: 10px;
           z-index: 1000;
+          background-color: ${colors.secondary};
+          width: max-content;
         }
         button {
           background: transparent;
@@ -51,9 +56,62 @@ export default function TopMenu() {
         button:hover {
           opacity: 0.7;
         }
-        @media (min-width: ${breakpoints.ipad}) and (max-width: ${breakpoints.pc}) {
+
+        .icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        .bActive {
+          border-left: 1px solid ${colors.primary};
+        }
+        .bDesactive {
+          border-left: 0;
+        }
+
+        .animationOn {
+          -webkit-animation: breathing 2s ease-out infinite normal;
+          animation: breathing 1s ease-out infinite normal;
+        }
+
+        .animationOff {
+          animation: none 0s;
+        }
+
+        @keyframes breathing {
+          0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+          }
+
+          25% {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+          }
+
+          60% {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+          }
+
+          100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+          }
+        }
+        @media (max-width: ${breakpoints.mobile}),
+          (max-width: ${breakpoints.ipad}) {
           nav {
-            width: ${breakpoints.pc};
+            width: 100%;
+            top: 0;
+            background-color: transparent;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .bActive {
+            border-left: 0;
+            border-bottom: 1px solid ${colors.primary};
           }
         }
       `}</style>
