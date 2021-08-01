@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import Input from "components/Input";
 import InputArea from "components/InputArea";
@@ -61,7 +62,7 @@ const ContactMe = ({ t }) => {
   return (
     <>
       <article id='Contactme' className='d-flex flex-column py-5 min-vh-75'>
-        <section className='container d-flex flex-column'>
+        <section className='container d-flex flex-column px-5'>
           <section className='d-flex align-items-start  mb-3'>
             <Title classNames='mb-5' text={t("contactMe:contactMe") + " 📧"} />
           </section>
@@ -91,12 +92,16 @@ const ContactMe = ({ t }) => {
                   </a>
                 </li>
                 <li>
-                  <img
-                    src='/icons/linkedin.svg'
-                    alt='linkedin'
-                    target='_blank'
-                  />
-                  <a href='https://linkedin.com'>LinkedIn</a>
+                  <img src='/icons/linkedin.svg' alt='linkedin' />
+                  <a href='https://linkedin.com' target='_blank'>
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <img src='/icons/cv.svg' alt='Curriculum' />
+                  <Link href='/hv'>
+                    <a target='_blank'>HV</a>
+                  </Link>
                 </li>
               </ul>
             </div>
