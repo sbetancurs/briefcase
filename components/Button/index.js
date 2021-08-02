@@ -21,7 +21,7 @@ export default function Button({
         <span></span>
         <span></span>
         <span></span>
-        <p>{children}</p>
+        {children}
       </button>
       <style jsx>
         {`

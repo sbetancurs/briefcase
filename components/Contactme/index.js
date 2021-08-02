@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import Input from "components/Input";
 import InputArea from "components/InputArea";
@@ -61,11 +62,17 @@ const ContactMe = ({ t }) => {
   return (
     <>
       <article id='Contactme' className='d-flex flex-column py-5 min-vh-75'>
-        <section className='container d-flex flex-column'>
+        <section className='container d-flex flex-column px-5'>
           <section className='d-flex align-items-start  mb-3'>
             <Title classNames='mb-5' text={t("contactMe:contactMe") + " 📧"} />
           </section>
-          <p className='contactMeText mb-5'>{t("contactMe:description")}</p>
+          <p className='contactMeText'>{t("contactMe:description")}</p>
+          <p className='lead mt-4 mb-5'>
+            •{t("contactMe:hv")}{" "}
+            <Link href='/hv'>
+              <a target='_blank'>{t("contactMe:here")}</a>
+            </Link>
+          </p>
           <section className='row'>
             <div className='col-lg-4 col-12'>
               <h3>{t("contactMe:followMe")} 🔥</h3>
@@ -91,12 +98,10 @@ const ContactMe = ({ t }) => {
                   </a>
                 </li>
                 <li>
-                  <img
-                    src='/icons/linkedin.svg'
-                    alt='linkedin'
-                    target='_blank'
-                  />
-                  <a href='https://linkedin.com'>LinkedIn</a>
+                  <img src='/icons/linkedin.svg' alt='linkedin' />
+                  <a href='https://linkedin.com' target='_blank'>
+                    LinkedIn
+                  </a>
                 </li>
               </ul>
             </div>

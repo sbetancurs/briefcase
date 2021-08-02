@@ -7,5 +7,7 @@
   "message": "Message",
   "send": "Send",
   "loading": "Loading",
-  "alert": "Opps, sorry! I'm working on improving this send email feature."
+  "alert": "Opps, sorry! I'm working on improving this send email feature.",
+  "hv": "To see my curriculum, You can click ",
+  "here": "here."
 }
