@@ -5,7 +5,7 @@ import Usa from "components/Icons/Usa";
 
 import useTranslation from "hooks/useTranslation";
 
-export default function TopMenu() {
+export default function TopMenu({ hv = false }) {
   const [language, changeLanguage] = useTranslation();
   const handleClick = (e, lg) => {
     e.preventDefault();
@@ -16,7 +16,42 @@ export default function TopMenu() {
 
   return (
     <>
-      <nav className='d-flex flex-lg-column align-items-start justify-content-end position-fixed'>
+      <nav
+        className={
+          "d-flex flex-lg-column align-items-start justify-content-end position-fixed" +
+          hv
+            ? "d-none"
+            : ""
+        }
+      >
+        <button
+          className={esActive ? "bActive" : "bDesactive"}
+          onClick={(e) => handleClick(e, "es")}
+        >
+          <img
+            className={"icon " + (esActive ? "animationOn" : "animationOff")}
+            src='/icons/colombia.svg'
+          />
+        </button>
+        <button
+          className={!esActive ? "bActive" : "bDesactive"}
+          onClick={(e) => handleClick(e, "en")}
+        >
+          <img
+            className={"icon " + (!esActive ? "animationOn" : "animationOff")}
+            src='/icons/usa.svg'
+          />
+        </button>
+      </nav>
+
+      <nav
+        className={
+          "flex-column align-items-start justify-content-end position-fixed" +
+          hv
+            ? "d-flex"
+            : ""
+        }
+      >
         <button
           className={esActive ? "bActive" : "bDesactive"}
           onClick={(e) => handleClick(e, "es")}
