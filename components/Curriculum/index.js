@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { colors, fontSizes } from "styles/theme";
+import { breakpoints, colors, fontSizes } from "styles/theme";
 
 const Curriculum = () => {
   const info = {
@@ -14,7 +14,7 @@ const Curriculum = () => {
     <>
       <section className='container-fluid min-vh-100'>
         <div className='row content'>
-          <div className='left-section col-2 d-flex flex-column align-items-center py-3'>
+          <div className='left-section col-lg-2 d-flex flex-column align-items-center py-3'>
             <img
               src='/images/me.jpg'
               alt='Curriculum'
@@ -62,10 +62,10 @@ const Curriculum = () => {
               </ul>
             </div>
           </div>
-          <div className='right-section col-10'>
+          <div className='right-section col-lg-10 pt-2 pt-lg-0'>
             <div
               id='contact-info'
-              className='d-flex justify-content-between align-items-center'
+              className='d-flex flex-column flex-lg-row justify-content-between align-items-lg-center align-items-start'
             >
               <h1>{info.name}</h1>
               <div>
@@ -284,6 +284,9 @@ const Curriculum = () => {
           border-bottom: 1px solid ${colors.white};
         }
 
+        span {
+        }
+
         h3 {
           font-size: ${fontSizes.font_size_sm};
         }
@@ -370,6 +373,16 @@ const Curriculum = () => {
         }
         li {
           font-size: 0.9em;
+        }
+
+        @media (max-width: ${breakpoints.ipad}) {
+          span {
+            font-size: ${fontSizes.font_size_sm};
+          }
+
+          .photo {
+            width: 50% !important;
+          }
         }
 
         @media print {
