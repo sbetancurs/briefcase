@@ -5,10 +5,6 @@ import Card from "components/Card";
 import Title from "components/Title";
 
 const Expertisies = ({ t }) => {
-  const getFormatText = (text) => {
-    let textArray = text.split("\\");
-    textArray.map();
-  };
   return (
     <>
       <article className='d-flex flex-column py-5 min-vh-100'>

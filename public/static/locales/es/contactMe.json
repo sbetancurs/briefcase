@@ -7,5 +7,7 @@
   "message": "Mensaje",
   "send": "Enviar",
   "loading": "Cargando",
-  "alert": "Opps, lo siento! Estoy trabajando en mejorar esta función de enviar email."
+  "alert": "Opps, lo siento! Estoy trabajando en mejorar esta función de enviar email.",
+  "hv": "Para ver mi curriculum puedes hacer click ",
+  "here": "aquí."
 }
