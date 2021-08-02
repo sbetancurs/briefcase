@@ -72,7 +72,7 @@ const Curriculum = ({ t }) => {
             <div id='languageMenu' className='w-100 mt-5 px-2'>
               <ul>
                 <li className='d-flex justify-content-center'>
-                  <TopMenu />
+                  <TopMenu hv={true} />
                 </li>
               </ul>
             </div>

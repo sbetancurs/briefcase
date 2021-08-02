@@ -18,10 +18,10 @@ export default function TopMenu({ hv = false }) {
     <>
       <nav
         className={
-          "d-flex flex-lg-column align-items-start justify-content-end position-fixed" +
-          hv
-            ? "d-none"
-            : ""
+          "d-flex " +
+          (!hv
+            ? "flex-lg-column align-items-start justify-content-end position-fixed"
+            : "")
         }
       >
         <button
@@ -44,33 +44,6 @@ export default function TopMenu({ hv = false }) {
         </button>
       </nav>
 
-      <nav
-        className={
-          "flex-column align-items-start justify-content-end position-fixed" +
-          hv
-            ? "d-flex"
-            : ""
-        }
-      >
-        <button
-          className={esActive ? "bActive" : "bDesactive"}
-          onClick={(e) => handleClick(e, "es")}
-        >
-          <img
-            className={"icon " + (esActive ? "animationOn" : "animationOff")}
-            src='/icons/colombia.svg'
-          />
-        </button>
-        <button
-          className={!esActive ? "bActive" : "bDesactive"}
-          onClick={(e) => handleClick(e, "en")}
-        >
-          <img
-            className={"icon " + (!esActive ? "animationOn" : "animationOff")}
-            src='/icons/usa.svg'
-          />
-        </button>
-      </nav>
       <style jsx>{`
         nav {
           top: 40vh;
