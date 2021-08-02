@@ -5,7 +5,7 @@ import Usa from "components/Icons/Usa";
 
 import useTranslation from "hooks/useTranslation";
 
-export default function TopMenu() {
+export default function TopMenu({ hv = false }) {
   const [language, changeLanguage] = useTranslation();
   const handleClick = (e, lg) => {
     e.preventDefault();
@@ -16,7 +16,14 @@ export default function TopMenu() {
 
   return (
     <>
-      <nav className='d-flex flex-lg-column align-items-start justify-content-end position-fixed'>
+      <nav
+        className={
+          "d-flex " +
+          (!hv
+            ? "flex-lg-column align-items-start justify-content-end position-fixed"
+            : "")
+        }
+      >
         <button
           className={esActive ? "bActive" : "bDesactive"}
           onClick={(e) => handleClick(e, "es")}
@@ -36,6 +43,7 @@ export default function TopMenu() {
           />
         </button>
       </nav>
+
       <style jsx>{`
         nav {
           top: 40vh;

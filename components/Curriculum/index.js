@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { withTranslation } from "i18n.js";
 import { breakpoints, colors, fontSizes } from "styles/theme";
+import TopMenu from "components/TopMenu";
 
-const Curriculum = () => {
+const Curriculum = ({ t }) => {
   const info = {
     cel: "3118828394",
     email: "sebasbetancur97@gmail.com",
@@ -21,7 +23,7 @@ const Curriculum = () => {
               className='photo rounded-circle w-100'
             />
             <div className='w-100 mt-3 px-2'>
-              <h2 className='mb-2 text-center'>Contact</h2>
+              <h2 className='mb-2 text-center'>{t("hv:contact")}</h2>
               <ul>
                 <li>
                   <img src='/icons/mail.svg' alt='mail' />
@@ -50,14 +52,27 @@ const Curriculum = () => {
               </div>
             </div>
             <div className='w-100 mt-5 px-2'>
-              <h2 className='mb-2  text-center'>Education</h2>
+              <h2 className='mb-2  text-center'>{t("hv:education")}</h2>
               <ul>
                 <li>
                   <img src='/icons/award.svg' alt='award' />
                   <span className='mx-2'>
-                    Software Engineer, Tecnológico de Antioquia, awarded March
-                    2021.
+                    {t("hv:engineer")}, Tecnológico de Antioquia,
+                    {t("hv:awarded")} March 2021.
                   </span>
+                </li>
+              </ul>
+            </div>
+            <div id='language' className='line w-100 '>
+              <div className='arrow'>
+                <div className='pin'></div>
+                <div className='pin'></div>
+              </div>
+            </div>
+            <div id='languageMenu' className='w-100 mt-5 px-2'>
+              <ul>
+                <li className='d-flex justify-content-center'>
+                  <TopMenu hv={true} />
                 </li>
               </ul>
             </div>
@@ -87,164 +102,107 @@ const Curriculum = () => {
               </div>
             </div>
             <div className='hv-section'>
-              <h2>Summary of Qualifications</h2>
+              <h2>{t("hv:qualifications")}</h2>
             </div>
             <div className='hv-content'>
               <ul>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
-                  <b>Programming Languages:</b> C#, Blazor, .Net Core,
-                  JavaScript, NodeJS, TypeScript.
+                  <b>{t("hv:languages")}:</b> C#, Blazor, .Net Core, JavaScript,
+                  NodeJS, TypeScript.
                 </li>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
-                  <b>Web Frameworks:</b> NextJS, Angular.
+                  <b>{t("hv:frameworks")}:</b> NextJS, Angular.
                 </li>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
-                  <b>Libraries:</b> React.
+                  <b>{t("hv:libraries")}:</b> React.
                 </li>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
-                  <b>Respositories:</b> Git, Github, GitLab, Azure
+                  <b>{t("hv:respositories")}:</b> Git, Github, GitLab, Azure
                 </li>
               </ul>
             </div>
 
             <div className='hv-section'>
-              <h2>Work Experience</h2>
+              <h2>{t("hv:workExperience")}</h2>
             </div>
             <div className='hv-content'>
-              <p className='date'>April 2019 &rArr; Present</p>
+              <p className='date'>
+                {t("hv:april")} 2019 &rArr; {t("hv:present")}
+              </p>
               <div className='d-flex subtitle'>
                 <img src='/icons/arrow-right-short.svg' alt='mail' />
                 <h3>Sourcecol S.A.S</h3>
               </div>
-              <address>Mid Software Engineer - Medellín, Colombia.</address>
-              <ul>
-                <li>
-                  Working as backend and frontend developer for develop web form
-                  where users can do procurements, generate orders, track
-                  contracts.
-                </li>
-                <li>
-                  Manage roles and permissions to enable some functions to users
-                  and restrict others.
-                </li>
-                <li>Desing main web for be more friendly with the users.</li>
-              </ul>
-              <a name='suitable'></a>
-              <p className='date'>March 2018 &rArr; April 2019</p>
+              <address>Mid {t("hv:engineer")} - Medellín, Colombia.</address>
+              <p>{t("hv:sourcecolExp")}</p>
+
+              <p className='date'>
+                {t("hv:march")} 2018 &rArr; {t("hv:april")} 2019
+              </p>
               <div className='d-flex subtitle'>
                 <img src='/icons/arrow-right-short.svg' alt='mail' />
                 <h3>E-city Software</h3>
               </div>
-              <address>Software developer - Medellín, Colombia</address>
-              <ul>
-                <li>
-                  Worked as backend and frontend developer, developing API's,
-                  design forms, developing workflows, etc.
-                </li>
-                <li>
-                  Worked programming physical devices that companies put in its
-                  branch offices where users can pay taxes, search for
-                  informations and all these with cash.
-                </li>
-                <li>
-                  Worked programming physical devices that cinemas put in its
-                  branch offices where users can pay tickets, search for
-                  functions, select position room, search for tickets bought and
-                  all these with cash.
-                </li>
-                <li>
-                  Integrated physical devices that manage cash like wallet, coin
-                  purse, finger scanner, etc. Used in software for get money,
-                  return money, enable authentication.
-                </li>
-                <li>
-                  Implemented and managed the translation infrastructure on our
-                  frontend and backend applications
-                </li>
-              </ul>
-              <a name='google'></a>
-              <p className='date'>January 2017 &rArr; March 2018</p>
+              <address>
+                Junior {t("hv:developer")} - Medellín, Colombia.
+              </address>
+              <p>{t("hv:ecityExp")}</p>
+
+              <p className='date'>
+                {t("hv:january")} 2017 &rArr; {t("hv:march")} 2018
+              </p>
               <div className='d-flex subtitle'>
                 <img src='/icons/arrow-right-short.svg' alt='mail' />
                 <h3>1Cero1 Software</h3>
               </div>
-              <address>Junior Software developer - Medellín, Colombia</address>
-              <ul>
-                <li>
-                  Developing web form for a town hall's portal, where users can
-                  pay taxes and make some procedure for get licenses or send
-                  documents.
-                </li>
-                <li>
-                  Designed and implemented automatizations for create the web
-                  forms faster.
-                </li>
-              </ul>
+              <address>
+                Junior {t("hv:developer")} - Medellín, Colombia.
+              </address>
+              <p>{t("hv:1cero1Exp")}</p>
             </div>
 
             <div className='hv-section'>
-              <h2>Entrepreneurship</h2>
+              <h2>{t("hv:entrepreneurship")}</h2>
             </div>
             <div className='hv-content mb-3'>
               <div className='d-flex subtitle'>
                 <img src='/icons/arrow-right-short.svg' alt='mail' />
                 <h3>Oxigiovanny App</h3>
               </div>
-              <ul>
-                <li>
-                  Used Javascript,NodeJS, NextJS to create a Web app that helps
-                  one health company to manage the data generated inside
-                  company's process, also generate reports and export these in
-                  excel files.
-                </li>
-              </ul>
+              <p>{t("hv:oxigiovannyExp")}</p>
             </div>
 
             <div className='hv-section'>
-              <h2>Open Source</h2>
+              <h2>{t("hv:openSource")}</h2>
             </div>
             <div className='hv-content mb-3'>
               <h3>
                 <div className='d-flex subtitle'>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
                   <Link href='/'>
-                    <a target='_blank'>Portfolio</a>
+                    <a target='_blank'>{t("hv:portfolio")}</a>
                   </Link>
                 </div>
               </h3>
-              <ul>
-                <li>
-                  Implemented my own portfolio based in my professional
-                  experience and info about me, the portfolio was created in
-                  NextJS, HTML5 and CSS3.
-                </li>
-              </ul>
+              <p>{t("hv:portfolioExp")}</p>
             </div>
 
             <div className='hv-section'>
-              <h2>Education</h2>
+              <h2>{t("hv:education")}</h2>
             </div>
             <div className='hv-content'>
-              <ul>
-                <li>
-                  Software Engineer, Tecnológico de Antioquia, awarded March
-                  2021.
-                </li>
-                <li>Platzi certifications, Platzi, awarded since 2019.</li>
-              </ul>
+              <p>{t("hv:educationExp")}</p>
             </div>
 
             <div className='hv-section'>
-              <h2>Activities and Interests</h2>
+              <h2>{t("hv:activitiesInterests")}</h2>
             </div>
             <div className='hv-content'>
-              <ul>
-                <li>Sports, chess, reading, keep learning.</li>
-              </ul>
+              <p>{t("hv:activities")}</p>
             </div>
           </div>
         </div>
@@ -252,6 +210,11 @@ const Curriculum = () => {
       <style jsx global>{`
         div.scroll-to-top {
           visibility: hidden !important;
+        }
+        @media (max-width: ${breakpoints.mobile}),
+          (max-width: ${breakpoints.ipad}) {
+          nav {
+            width: 20%!important;
         }
       `}</style>
       <style jsx>{`
@@ -399,7 +362,9 @@ const Curriculum = () => {
             max-width: 50em;
           }
 
-          .left-section {
+          .left-section,
+          #language,
+          #languageMenu {
             display: none !important;
           }
 
@@ -462,4 +427,5 @@ const Curriculum = () => {
   );
 };
 
-export default Curriculum;
+export default withTranslation(["common", "hv"])(Curriculum);
+
