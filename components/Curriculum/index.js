@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Link from "next/link";
 import { withTranslation } from "i18n.js";
 import { breakpoints, colors, fontSizes } from "styles/theme";
@@ -12,9 +13,17 @@ const Curriculum = ({ t }) => {
     name: "Sebastian Betancur Salazar",
   };
 
+  const docRef = useRef();
+
+  const print = () => {
+    if (window) {
+      window.print();
+    }
+  };
+
   return (
     <>
-      <section className='container-fluid min-vh-100'>
+      <section ref={docRef} id='hv' className='container-fluid min-vh-100'>
         <div className='row content'>
           <div className='left-section col-lg-2 d-flex flex-column align-items-center py-3'>
             <img
@@ -70,6 +79,12 @@ const Curriculum = ({ t }) => {
               </div>
             </div>
             <div id='languageMenu' className='w-100 mt-5 px-2'>
+              <div className='d-flex justify-content-center mb-3'>
+                <img src='/icons/printer.svg' alt='print' />
+                <a className='mx-2 print' onClick={print}>
+                  {t("hv:print")}
+                </a>
+              </div>
               <ul>
                 <li className='d-flex justify-content-center'>
                   <TopMenu hv={true} />
@@ -338,6 +353,13 @@ const Curriculum = ({ t }) => {
           font-size: 0.9em;
         }
 
+        .print {
+          cursor: pointer;
+        }
+        .print:hover {
+          text-decoration: underline;
+        }
+
         @media (max-width: ${breakpoints.ipad}) {
           span {
             font-size: ${fontSizes.font_size_sm};
@@ -428,4 +450,3 @@ const Curriculum = ({ t }) => {
 };
 
 export default withTranslation(["common", "hv"])(Curriculum);
-
