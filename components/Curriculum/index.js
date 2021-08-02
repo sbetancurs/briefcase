@@ -79,7 +79,7 @@ const Curriculum = ({ t }) => {
               </div>
             </div>
             <div id='languageMenu' className='w-100 mt-5 px-2'>
-              <div className='d-flex justify-content-center mb-3'>
+              <div className='printFeature d-flex justify-content-center mb-3'>
                 <img src='/icons/printer.svg' alt='print' />
                 <a className='mx-2 print' onClick={print}>
                   {t("hv:print")}
@@ -367,6 +367,10 @@ const Curriculum = ({ t }) => {
 
           .photo {
             width: 50% !important;
+          }
+
+          .printFeature {
+            display: none !important;
           }
         }
 

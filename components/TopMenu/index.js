@@ -18,7 +18,7 @@ export default function TopMenu({ hv = false }) {
     <>
       <nav
         className={
-          "d-flex " +
+          "d-flex justify-content-center" +
           (!hv
             ? "flex-lg-column align-items-start justify-content-end position-fixed"
             : "")
