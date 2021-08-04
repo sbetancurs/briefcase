@@ -1,8 +1,5 @@
 import { breakpoints, colors } from "styles/theme";
 
-import Colombia from "components/Icons/Colombia";
-import Usa from "components/Icons/Usa";
-
 import useTranslation from "hooks/useTranslation";
 
 export default function TopMenu({ hv = false }) {
@@ -18,10 +15,10 @@ export default function TopMenu({ hv = false }) {
     <>
       <nav
         className={
-          "d-flex justify-content-center" +
+          "d-flex " +
           (!hv
             ? "flex-lg-column align-items-start justify-content-end position-fixed"
-            : "")
+            : " justify-content-center")
         }
       >
         <button

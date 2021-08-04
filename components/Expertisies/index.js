@@ -56,17 +56,11 @@ const Expertisies = ({ t }) => {
       </article>
       <style jsx>{`
         article {
-          background: linear-gradient(
-            to bottom,
-            ${colors.background_primary} 0%,
-            rgba(0, 0, 34, 1) 65%,
-            ${colors.background_secondary} 100%
-          );
           color: ${colors.white};
         }
 
         #cards {
-          margin-right: 0;
+          margin: 0;
         }
       `}</style>
     </>
