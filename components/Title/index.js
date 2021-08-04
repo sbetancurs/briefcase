@@ -1,6 +1,6 @@
 import { breakpoints, colors, fontSizes } from "styles/theme";
 
-export default function Title({ text, classNames }) {
+export default function Title({ text, classNames = "" }) {
   return (
     <>
       <span className={"main-title mt-5 " + classNames}>
