@@ -42,11 +42,11 @@ export default function ScrollToTop() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: ${colors.primary};
+          background-color: ${colors.background_primary};
           border-radius: 50px;
           bottom: 40px;
-          box-shadow: 2px 2px 3px ${colors.primary_highlight};
-          color: black;
+          box-shadow: 2px 2px 3px ${colors.white};
+          color: white;
           cursor: pointer;
           height: 65px;
           position: fixed;
@@ -56,6 +56,30 @@ export default function ScrollToTop() {
           font-size: 4rem;
           padding-bottom: 0.5rem;
           text-decoration: none;
+          transform: scale(1);
+          animation: breathing 1.5s linear infinite normal;
+        }
+
+        @keyframes breathing {
+          0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+          }
+
+          25% {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+          }
+
+          60% {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+          }
+
+          100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+          }
         }
       `}</style>
     </>
