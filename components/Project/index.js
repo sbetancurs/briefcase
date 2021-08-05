@@ -1,17 +1,27 @@
 import { breakpoints, colors, fontSizes } from "styles/theme";
 
-export default function Card({ srcIcon, title, description }) {
+export default function Project({
+  srcIcon,
+  title,
+  description,
+  classCss,
+  url = "",
+}) {
   return (
     <>
-      <div className='box'>
+      <div className={"box " + classCss}>
         <span></span>
         <span></span>
-        <div className='content d-flex flex-column  align-items-center justify-content-center'>
+        <div className='content d-flex flex-column  align-items-center justify-content-start'>
           <div className='iconContainer'>
-            <img className='icon' src={srcIcon} />
+            <a href={url} target='_blank'>
+              <img className='icon' src={srcIcon} />
+            </a>
           </div>
-          <label>{title}</label>
-          <p>{description}</p>
+          <div className='text'>
+            <label>{title}</label>
+            <p>{description}</p>
+          </div>
         </div>
       </div>
       <style jsx>{`
@@ -21,18 +31,20 @@ export default function Card({ srcIcon, title, description }) {
           color: white;
           display: flex;
           flex-wrap: wrap;
-          height: 450px;
+          height: 550px;
           justify-content: center;
           margin: 40px;
-          padding: 20px;
           position: relative;
-          width: 350px;
+          width: 450px;
 
           -webkit-transition: 0.5s;
         }
+        .text {
+          padding: 10px 20px;
+        }
         .box:hover {
           box-shadow: 0 0px 20px ${colors.primary};
-          transform: scale(1.15);
+          transform: scale(1.2);
           -webkit-transition: 1s;
         }
         .content:hover {
@@ -40,16 +52,15 @@ export default function Card({ srcIcon, title, description }) {
           left: 0 !important;
           right: 0 !important;
           bottom: 0 !important;
-          padding: 40px !important;
           padding-top: 0 !important;
           -webkit-transition: 1s;
         }
+
         .box .content {
           border: 1px solid slategrey;
           bottom: 15px;
           box-shadow: 0 5px 10px rgba(9, 0, 0, 0.1);
           left: 15px;
-          padding: 20px;
           padding-top: 0;
           position: absolute;
           right: 15px;
@@ -116,13 +127,19 @@ export default function Card({ srcIcon, title, description }) {
 
         .iconContainer {
           width: 100%;
-          height: 200px;
+          height: 300px;
+          padding: 10px;
           display: grid;
           place-items: center;
         }
         .icon {
-          width: 200px;
-          height: 200px;
+          width: 100%;
+          height: 300px;
+        }
+
+        .disabled {
+          pointer-events: none;
+          opacity: 0.6;
         }
         @media (max-width: ${breakpoints.mobile}) {
           .box.content {
