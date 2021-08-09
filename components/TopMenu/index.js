@@ -13,14 +13,7 @@ export default function TopMenu({ hv = false }) {
 
   return (
     <>
-      <nav
-        className={
-          "d-flex " +
-          (!hv
-            ? "flex-lg-column align-items-start justify-content-end position-fixed"
-            : " justify-content-center")
-        }
-      >
+      <div className={"d-flex justify-content-start"}>
         <button
           className={esActive ? "bActive" : "bDesactive"}
           onClick={(e) => handleClick(e, "es")}
@@ -39,16 +32,13 @@ export default function TopMenu({ hv = false }) {
             src='/icons/usa.svg'
           />
         </button>
-      </nav>
+      </div>
 
       <style jsx>{`
         nav {
-          top: 40vh;
-          border-top-right-radius: 120%;
-          border-bottom-right-radius: 120%;
           padding: 10px;
           z-index: 1000;
-          background-color: ${colors.secondary};
+          background-color: transparent;
           width: max-content;
         }
         button {
@@ -63,15 +53,15 @@ export default function TopMenu({ hv = false }) {
         }
 
         .icon {
-          width: 50px;
-          height: 50px;
+          width: 35px;
+          height: 35px;
         }
 
         .bActive {
-          border-left: 1px solid ${colors.primary};
+          border-bottom: 1px solid ${colors.primary};
         }
         .bDesactive {
-          border-left: 0;
+          border-bottom: 0;
         }
 
         .animationOn {

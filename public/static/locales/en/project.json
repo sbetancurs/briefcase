@@ -2,5 +2,6 @@
   "publicProject": "Public Projects",
   "taskAppDescription": "App developed in React using NextJS, react Hooks, NextJs API, database in json sheet.\nThis app is about manage tasks, create, delete and update state.",
   "teamManagerAppDescription": "App developed in React using Redux for manage general state, react Hooks, Rick and morty API.\nThis app is about manage team, change positions and animated put in positions.",
-  "RickAndMortyAppDescription": "App developed in React using NextJS, react Hooks, Rick and morty API, Lazy load.\nThis app is about search and know all info about rick and morty characters."
+  "RickAndMortyAppDescription": "App developed in React using NextJS, react Hooks, Rick and morty API, Lazy load.\nThis app is about search and know all info about rick and morty characters.",
+  "moviesApiDescription": "Api made with NodeJs using express as a framework to create the server, MongoDB is used as a database, middlewares like JOI and HAPI for data and field validations. "
 }

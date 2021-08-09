@@ -16,6 +16,7 @@ export default function Title({ text, classNames = "" }) {
           padding: 15px 25px;
           position: relative;
           transition: 0, 2s;
+          text-transform: uppercase;
         }
         .main-title span {
           animation-duration: 1.5s;

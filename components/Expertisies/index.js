@@ -7,7 +7,7 @@ import Title from "components/Title";
 const Expertisies = ({ t }) => {
   return (
     <>
-      <article className='d-flex flex-column py-5 min-vh-100'>
+      <article id='myKnowledges' className='d-flex flex-column py-5 min-vh-100'>
         <section className='d-flex align-items-center justify-content-center mb-3'>
           <Title text={t("expertisie:MyExpertisie")} />
         </section>

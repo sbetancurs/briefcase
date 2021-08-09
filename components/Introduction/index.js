@@ -26,11 +26,14 @@ function Introduction({ t }) {
 
   return (
     <>
-      <article className='container d-flex flex-column justify-content-center min-vh-100 pt-5'>
+      <article
+        id='start'
+        className='container d-flex flex-column justify-content-center min-vh-100 pt-5'
+      >
         <section className='d-flex justify-content-center'>
           <MainLogo width={200} height={200} />
         </section>
-        <section className='introductionContent d-flex flex-column align-items-center justify-content-center'>
+        <section className='introductionContent d-flex flex-column align-items-center justify-content-center text-center'>
           <h1 className='backgroundSolid'>SEBASTIAN BETANCUR SALAZAR</h1>
           <p className='info backgroundSolid mb-5'>
             🇨🇴{" "}

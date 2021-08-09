@@ -111,13 +111,6 @@ const ContactMe = ({ t }) => {
                 <span className='line'></span>
                 <form onSubmit={handleSubmit} className='content py-2'>
                   <Input
-                    name='name'
-                    value={formValues.name}
-                    placeholder={t("contactMe:name")}
-                    type='text'
-                    onChange={handleChange}
-                  />
-                  <Input
                     name='email'
                     value={formValues.email}
                     placeholder={t("contactMe:email")}

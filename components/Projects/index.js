@@ -10,7 +10,10 @@ const Projects = ({ src, alt, title, description, t }) => {
   description = "short description of";
   return (
     <>
-      <article className='d-flex flex-column py-5 min-vh-100'>
+      <article
+        id='publicProjects'
+        className='d-flex flex-column py-5 min-vh-100'
+      >
         <section className='d-flex align-items-center justify-content-center mb-3'>
           <Title text={t("project:publicProject")} />
         </section>
@@ -28,10 +31,16 @@ const Projects = ({ src, alt, title, description, t }) => {
             description={t("project:teamManagerAppDescription")}
           />
           <Project
-            srcIcon='/images/task-app.png'
+            srcIcon='/images/rickmorty.png'
             title='Rick&Morty App'
             description={t("project:taskAppDescription")}
-            classCss='disabled'
+            url='https://rick-and-morty-app-liart.vercel.app/'
+          />
+          <Project
+            srcIcon='/images/api.png'
+            title='Movies API'
+            description={t("project:moviesApiDescription")}
+            url='https://movies-api-swart.vercel.app'
           />
         </section>
       </article>

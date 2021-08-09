@@ -1,5 +1,5 @@
 
-import TopMenu from "../components/TopMenu";
+import NavigationMenu from "../components/NavigationMenu";
 import Introduction from "../components/Introduction";
 import Expertisies from "../components/Expertisies";
 import Projects from "../components/Projects";
@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-      <TopMenu />
+      <NavigationMenu />
       <Introduction />
       <Expertisies />
       <Projects />
@@ -19,7 +19,5 @@ export default function Home() {
   );
 }
 
-Home.getInitialProps = async () => ({
-  namespacesRequired: ["common", "introduction"],
-});
+
 

@@ -33,31 +33,30 @@ export default function ScrollToTop() {
       <div className='scroll-to-top'>
         {isVisible && (
           <a onClick={scrollToTop} className='float'>
-            ☝
+            ☝️
           </a>
         )}
       </div>
       <style jsx>{`
         .float {
-          display: flex;
           align-items: center;
-          justify-content: center;
+          animation: breathing 1.5s linear infinite normal;
           background-color: ${colors.background_primary};
           border-radius: 50px;
           bottom: 40px;
           box-shadow: 2px 2px 3px ${colors.white};
           color: white;
           cursor: pointer;
+          display: flex;
+          font-size: 3rem;
           height: 65px;
+          justify-content: center;
           position: fixed;
           right: 40px;
           text-align: center;
-          width: 65px;
-          font-size: 4rem;
-          padding-bottom: 0.5rem;
           text-decoration: none;
           transform: scale(1);
-          animation: breathing 1.5s linear infinite normal;
+          width: 65px;
         }
 
         @keyframes breathing {
