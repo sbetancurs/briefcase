@@ -220,7 +220,7 @@ const Curriculum = ({ t }) => {
               <h3>
                 <div className='d-flex subtitle'>
                   <img src='/icons/arrow-right-short.svg' />
-                  <Link href='/'>
+                  <Link href='https://task-app-psi.vercel.app'>
                     <a target='_blank'>Task App</a>
                   </Link>
                 </div>
@@ -232,7 +232,19 @@ const Curriculum = ({ t }) => {
               <h3>
                 <div className='d-flex subtitle'>
                   <img src='/icons/arrow-right-short.svg' />
-                  <Link href='/'>
+                  <Link href='https://team-management-five.vercel.app'>
+                    <a target='_blank'>Team management</a>
+                  </Link>
+                </div>
+              </h3>
+              <p>{t("hv:teamManagerAppDescription")}</p>
+            </div>
+
+            <div className='hv-content pb-0'>
+              <h3>
+                <div className='d-flex subtitle'>
+                  <img src='/icons/arrow-right-short.svg' />
+                  <Link href='https://rick-and-morty-app-liart.vercel.app'>
                     <a target='_blank'>Rick & Morty App</a>
                   </Link>
                 </div>
@@ -244,7 +256,7 @@ const Curriculum = ({ t }) => {
               <h3>
                 <div className='d-flex subtitle'>
                   <img src='/icons/arrow-right-short.svg' />
-                  <Link href='/'>
+                  <Link href='https://movies-api-swart.vercel.app'>
                     <a target='_blank'>Movies API</a>
                   </Link>
                 </div>
