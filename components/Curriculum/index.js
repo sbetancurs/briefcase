@@ -124,15 +124,21 @@ const Curriculum = ({ t }) => {
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
                   <b>{t("hv:languages")}:</b> C#, Blazor, .Net Core, JavaScript,
-                  NodeJS, TypeScript.
+                  TypeScript.
                 </li>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
-                  <b>{t("hv:frameworks")}:</b> NextJS, Angular.
+                  <b>{t("hv:frameworks")}:</b> NextJS, Angular, NodeJS,
+                  ExpressJS, ASP.NET, ASP.NET MVC, React Native.
                 </li>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
-                  <b>{t("hv:libraries")}:</b> React.
+                  <b>{t("hv:libraries")}:</b> React, Redux, JQuery.
+                </li>
+                <li>
+                  <img src='/icons/arrow-right-short.svg' alt='mail' />
+                  <b>{t("hv:databases")}:</b> SQL Server, MySQl, MongoDB,
+                  Firebase.
                 </li>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
@@ -184,26 +190,66 @@ const Curriculum = ({ t }) => {
               <h2>{t("hv:entrepreneurship")}</h2>
             </div>
             <div className='hv-content mb-3'>
-              <div className='d-flex subtitle'>
-                <img src='/icons/arrow-right-short.svg' alt='mail' />
-                <h3>Oxigiovanny App</h3>
-              </div>
+              <h3>
+                <div className='d-flex subtitle'>
+                  <img src='/icons/arrow-right-short.svg' alt='mail' />
+                  <Link href='https://oxigiovanny.vercel.app'>
+                    <a target='_blank'>Oxigiovanny App</a>
+                  </Link>
+                </div>
+              </h3>
               <p>{t("hv:oxigiovannyExp")}</p>
             </div>
 
             <div className='hv-section'>
               <h2>{t("hv:openSource")}</h2>
             </div>
-            <div className='hv-content mb-3'>
+            <div className='hv-content pb-0'>
               <h3>
                 <div className='d-flex subtitle'>
-                  <img src='/icons/arrow-right-short.svg' alt='mail' />
+                  <img src='/icons/arrow-right-short.svg' />
                   <Link href='/'>
                     <a target='_blank'>{t("hv:portfolio")}</a>
                   </Link>
                 </div>
               </h3>
               <p>{t("hv:portfolioExp")}</p>
+            </div>
+
+            <div className='hv-content pb-0'>
+              <h3>
+                <div className='d-flex subtitle'>
+                  <img src='/icons/arrow-right-short.svg' />
+                  <Link href='/'>
+                    <a target='_blank'>Task App</a>
+                  </Link>
+                </div>
+              </h3>
+              <p>{t("hv:taskAppDescription")}</p>
+            </div>
+
+            <div className='hv-content pb-0'>
+              <h3>
+                <div className='d-flex subtitle'>
+                  <img src='/icons/arrow-right-short.svg' />
+                  <Link href='/'>
+                    <a target='_blank'>Rick & Morty App</a>
+                  </Link>
+                </div>
+              </h3>
+              <p>{t("hv:RickAndMortyAppDescription")}</p>
+            </div>
+
+            <div className='hv-content mb-3'>
+              <h3>
+                <div className='d-flex subtitle'>
+                  <img src='/icons/arrow-right-short.svg' />
+                  <Link href='/'>
+                    <a target='_blank'>Movies API</a>
+                  </Link>
+                </div>
+              </h3>
+              <p>{t("hv:moviesApiDescription")}</p>
             </div>
 
             <div className='hv-section'>
