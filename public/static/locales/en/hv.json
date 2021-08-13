@@ -30,5 +30,7 @@
   "taskAppDescription": "Aplicación desarrollada en React usando NextJS, React Hooks, Next Js API, base de datos en hoja json.\nEsta aplicación trata sobre administrar tareas, crear, eliminar y actualizar el estado. ",
   "teamManagerAppDescription": "Aplicación desarrollada en React usando Redux para administrar el estado general, react Hooks, Rick and Morty API.\nEsta aplicación trata sobre administrar el equipo, cambiar posiciones y poner en posiciones animadas. ",
   "RickAndMortyAppDescription": "Aplicación desarrollada en React usando NextJS, React Hooks, Rick and Morty API, Lazyload.\nEsta aplicación se trata de buscar y conocer toda la información sobre los personajes de Rick y Morty.",
-  "moviesApiDescription": "Api realizada con NodeJs usando express como framework para crear el servidor, como base de datos se usa MongoDB, middlewares como JOI y HAPI para validaciones de datos y campos."
+  "moviesApiDescription": "Api realizada con NodeJs usando express como framework para crear el servidor, como base de datos se usa MongoDB, middlewares como JOI y HAPI para validaciones de datos y campos.",
+  "english": "English level",
+  "softwaredev": "Software developer"
 }

@@ -9,7 +9,7 @@ const Curriculum = ({ t }) => {
     cel: "3118828394",
     email: "sebasbetancur97@gmail.com",
     github: "sbetancurs",
-    domain: "www.sbetancurs.co",
+    domain: "https://portfolio-sbetancurs.vercel.app",
     name: "Sebastian Betancur Salazar",
   };
 
@@ -31,6 +31,10 @@ const Curriculum = ({ t }) => {
               alt='Curriculum'
               className='photo rounded-circle w-100'
             />
+            <div className='text-center my-3 d-block d-lg-none'>
+              <h2>{info.name}</h2>
+              <h3>{t("hv:softwaredev")}</h3>
+            </div>
             <div className='w-100 mt-3 px-2'>
               <h2 className='mb-2 text-center'>{t("hv:contact")}</h2>
               <ul>
@@ -70,6 +74,11 @@ const Curriculum = ({ t }) => {
                     {t("hv:awarded")} March 2021.
                   </span>
                 </li>
+
+                <li>
+                  <img src='/icons/check.svg' alt='check' />
+                  <span className='mx-2'>{t("hv:english")} B2.</span>
+                </li>
               </ul>
             </div>
             <div id='language' className='line w-100 '>
@@ -97,12 +106,11 @@ const Curriculum = ({ t }) => {
               id='contact-info'
               className='d-flex flex-column flex-lg-row justify-content-between align-items-lg-center align-items-start'
             >
-              <h1>{info.name}</h1>
+              <h1 id='mainName' className='d-none d-lg-inline-block'>
+                {info.name}
+              </h1>
               <div>
-                <a
-                  id='email'
-                  href='mailto:c2ViYXNiZXRhbmN1cjk3QGdtYWlsLmNvbQ=='
-                >
+                <a id='email' href={`mailto:${info.email}`}>
                   {info.email}
                 </a>
                 <br />
@@ -110,8 +118,10 @@ const Curriculum = ({ t }) => {
                   href='https://portfolio-mu-livid.vercel.app/'
                   target='_blank'
                 >
-                  {info.domain}
+                  {t("hv:portfolio")}
                 </a>
+                <br />
+                <a>{info.cel}</a>
                 <br />
                 Medellín, Colombia
               </div>
@@ -123,13 +133,13 @@ const Curriculum = ({ t }) => {
               <ul>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
-                  <b>{t("hv:languages")}:</b> C#, Blazor, .Net Core, JavaScript,
-                  TypeScript.
+                  <b>{t("hv:languages")}:</b> C#, JavaScript, PHP.
                 </li>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
-                  <b>{t("hv:frameworks")}:</b> NextJS, Angular, NodeJS,
-                  ExpressJS, ASP.NET, ASP.NET MVC, React Native.
+                  <b>{t("hv:frameworks")}:</b> Blazor,.Net Core,NextJS,
+                  Angular,TypeScript, NodeJS, Xamarin, WPF, ExpressJS, ASP.NET,
+                  ASP.NET MVC, React Native.
                 </li>
                 <li>
                   <img src='/icons/arrow-right-short.svg' alt='mail' />
@@ -317,7 +327,6 @@ const Curriculum = ({ t }) => {
 
         h2 {
           font-size: ${fontSizes.font_size_md};
-          border-bottom: 1px solid ${colors.white};
         }
 
         span {
@@ -452,6 +461,9 @@ const Curriculum = ({ t }) => {
             display: none !important;
           }
 
+          #mainName {
+            display: block !important;
+          }
           #address h3 {
             border-bottom: none;
             margin-top: 0;
