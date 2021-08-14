@@ -27,7 +27,7 @@ const Curriculum = ({ t }) => {
         <div className='row content'>
           <div className='left-section col-lg-2 d-flex flex-column align-items-center py-3'>
             <img
-              src='/images/me.jpg'
+              src='/images/me.png'
               alt='Curriculum'
               className='photo rounded-circle w-100'
             />
