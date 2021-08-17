@@ -102,6 +102,11 @@ const Curriculum = ({ t }) => {
             </div>
           </div>
           <div className='right-section col-lg-10 pt-2 pt-lg-0'>
+            <img
+              src='/images/me.png'
+              alt='Curriculum'
+              className='photo rounded-circle w-100 d-none d-print-inline-block'
+            />
             <div
               id='contact-info'
               className='d-flex flex-column flex-lg-row justify-content-between align-items-lg-center align-items-start'
