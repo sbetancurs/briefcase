@@ -22,11 +22,11 @@ export default function Card({ srcIcon, title, description }) {
           display: flex;
           flex-wrap: wrap;
           height: 450px;
+          width: 380px;
           justify-content: center;
           margin: 40px;
           padding: 20px;
           position: relative;
-          width: 350px;
 
           -webkit-transition: 0.5s;
         }

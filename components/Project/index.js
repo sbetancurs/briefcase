@@ -32,10 +32,10 @@ export default function Project({
           display: flex;
           flex-wrap: wrap;
           height: 500px;
+          width: 430px;
           justify-content: center;
           margin: 40px;
           position: relative;
-          width: 400px;
 
           -webkit-transition: 0.5s;
         }
