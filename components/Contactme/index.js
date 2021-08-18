@@ -99,7 +99,10 @@ const ContactMe = ({ t }) => {
                 </li>
                 <li>
                   <img src='/icons/linkedin.svg' alt='linkedin' />
-                  <a href='https://linkedin.com' target='_blank'>
+                  <a
+                    href='https://www.linkedin.com/in/sbetancurs/'
+                    target='_blank'
+                  >
                     LinkedIn
                   </a>
                 </li>
