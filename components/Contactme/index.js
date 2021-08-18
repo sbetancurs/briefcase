@@ -106,6 +106,12 @@ const ContactMe = ({ t }) => {
                     LinkedIn
                   </a>
                 </li>
+                <li>
+                  <img src='/icons/github.svg' alt='github' />
+                  <a href='https://github.com/sbetancurs/' target='_blank'>
+                    Github
+                  </a>
+                </li>
               </ul>
             </div>
             <div className='col-lg-8 col-12 my-md-5'>
