@@ -31,11 +31,11 @@ export default function Project({
           color: white;
           display: flex;
           flex-wrap: wrap;
-          height: 550px;
+          height: 500px;
           justify-content: center;
           margin: 40px;
           position: relative;
-          width: 450px;
+          width: 400px;
 
           -webkit-transition: 0.5s;
         }
@@ -127,14 +127,14 @@ export default function Project({
 
         .iconContainer {
           width: 100%;
-          height: 300px;
+          height: 250px;
           padding: 10px;
           display: grid;
           place-items: center;
         }
         .icon {
           width: 100%;
-          height: 300px;
+          height: 250px;
         }
 
         .disabled {

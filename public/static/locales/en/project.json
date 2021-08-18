@@ -3,5 +3,6 @@
   "taskAppDescription": "App developed in React using NextJS, react Hooks, NextJs API, database in json sheet.\nThis app is about manage tasks, create, delete and update state.",
   "teamManagerAppDescription": "App developed in React using Redux for manage general state, react Hooks, Rick and morty API.\nThis app is about manage team, change positions and animated put in positions.",
   "RickAndMortyAppDescription": "App developed in React using NextJS, react Hooks, Rick and morty API, Lazy load.\nThis app is about search and know all info about rick and morty characters.",
-  "moviesApiDescription": "Api made with NodeJs using express as a framework to create the server, MongoDB is used as a database, middlewares like JOI and HAPI for data and field validations. "
+  "moviesApiDescription": "Api made with NodeJs using express as a framework to create the server, MongoDB is used as a database, middlewares like JOI and HAPI for data and field validations. ",
+  "oxigiovannyExp": "Used Javascript,NodeJS, NextJS to create a Web app that helps one health company to manage the data generated inside company's process, also generate reports and export these in excel files.\nI made the Rest API deployment in Heroku and the application deployment in Vercel, all this with the respective CORS restrictions."
 }

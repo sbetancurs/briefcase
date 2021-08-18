@@ -17,7 +17,7 @@ const Projects = ({ src, alt, title, description, t }) => {
         <section className='d-flex align-items-center justify-content-center mb-3'>
           <Title text={t("project:publicProject")} />
         </section>
-        <section id='projects' className='row justify-content-center'>
+        <section id='projects' className='justify-content-center'>
           <Project
             srcIcon='/images/task-app.jpg'
             title='Task App'
@@ -42,6 +42,12 @@ const Projects = ({ src, alt, title, description, t }) => {
             description={t("project:moviesApiDescription")}
             url='https://movies-api-swart.vercel.app'
           />
+          <Project
+            srcIcon='/images/oxigiovanny.jpg'
+            title='Oxigiovanny'
+            description={t("project:oxigiovannyExp")}
+            url='https://oxigiovanny.vercel.app/'
+          />
         </section>
       </article>
       <style jsx>{`
@@ -57,6 +63,9 @@ const Projects = ({ src, alt, title, description, t }) => {
 
         #projects {
           margin: 0;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 0;
         }
       `}</style>
     </>
