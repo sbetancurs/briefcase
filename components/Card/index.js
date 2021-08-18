@@ -32,17 +32,21 @@ export default function Card({ srcIcon, title, description }) {
         }
         .box:hover {
           box-shadow: 0 0px 20px ${colors.primary};
-          transform: scale(1.15);
-          -webkit-transition: 1s;
+           {
+            /*transform: scale(1.15);
+          -webkit-transition: 1s; */
+          }
         }
         .content:hover {
-          top: 0 !important;
+           {
+            /* top: 0 !important;
           left: 0 !important;
           right: 0 !important;
           bottom: 0 !important;
           padding: 40px !important;
           padding-top: 0 !important;
-          -webkit-transition: 1s;
+          -webkit-transition: 1s; */
+          }
         }
         .box .content {
           border: 1px solid slategrey;
