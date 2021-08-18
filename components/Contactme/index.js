@@ -116,7 +116,7 @@ const ContactMe = ({ t }) => {
             </div>
             <div className='col-lg-8 col-12 my-md-5'>
               <div className='box position-relative py-2 px-4'>
-                <span className='line d-none'></span>
+                <span className='line '></span>
                 <span className='line d-none'></span>
                 <form onSubmit={handleSubmit} className='content py-2'>
                   <Input

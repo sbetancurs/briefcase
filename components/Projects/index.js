@@ -67,6 +67,20 @@ const Projects = ({ src, alt, title, description, t }) => {
           grid-template-columns: repeat(3, 1fr);
           grid-gap: 0;
         }
+
+        @media (max-width: ${breakpoints.mobile}) {
+          #projects {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
+
+        @media (max-width: ${breakpoints.mobile}),
+          (max-width: ${breakpoints.ipad}) {
+          #projects {
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+          }
+        }
       `}</style>
     </>
   );
