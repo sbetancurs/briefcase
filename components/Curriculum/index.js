@@ -27,7 +27,7 @@ const Curriculum = ({ t }) => {
         <div className='row content'>
           <div className='left-section col-lg-2 d-flex flex-column align-items-center py-3'>
             <img
-              src='/images/me.png'
+              src='/images/me.jpg'
               alt='Curriculum'
               className='photo rounded-circle w-100'
             />
@@ -103,7 +103,7 @@ const Curriculum = ({ t }) => {
           </div>
           <div className='right-section col-lg-10 pt-2 pt-lg-0'>
             <img
-              src='/images/me.png'
+              src='/images/me.jpg'
               alt='Curriculum'
               className='photo rounded-circle w-100 d-none d-print-inline-block'
             />

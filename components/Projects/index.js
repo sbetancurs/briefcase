@@ -19,25 +19,25 @@ const Projects = ({ src, alt, title, description, t }) => {
         </section>
         <section id='projects' className='row justify-content-center'>
           <Project
-            srcIcon='/images/task-app.png'
+            srcIcon='/images/task-app.jpg'
             title='Task App'
             url='https://task-app-psi.vercel.app/'
             description={t("project:taskAppDescription")}
           />
           <Project
-            srcIcon='/images/team.png'
+            srcIcon='/images/team.jpg'
             title='Team Manager'
             url='https://team-management-five.vercel.app'
             description={t("project:teamManagerAppDescription")}
           />
           <Project
-            srcIcon='/images/rickmorty.png'
+            srcIcon='/images/rickmorty.jpg'
             title='Rick&Morty App'
             description={t("project:taskAppDescription")}
             url='https://rick-and-morty-app-liart.vercel.app/'
           />
           <Project
-            srcIcon='/images/api.png'
+            srcIcon='/images/api.jpg'
             title='Movies API'
             description={t("project:moviesApiDescription")}
             url='https://movies-api-swart.vercel.app'
