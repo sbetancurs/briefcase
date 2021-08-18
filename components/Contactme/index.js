@@ -109,7 +109,7 @@ const ContactMe = ({ t }) => {
                 <li>
                   <img src='/icons/github.svg' alt='github' />
                   <a href='https://github.com/sbetancurs/' target='_blank'>
-                    Github
+                    GitHub
                   </a>
                 </li>
               </ul>
