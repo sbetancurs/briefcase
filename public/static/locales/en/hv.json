@@ -32,5 +32,6 @@
   "RickAndMortyAppDescription": "Aplicación desarrollada en React usando NextJS, React Hooks, Rick and Morty API, Lazyload.\nEsta aplicación se trata de buscar y conocer toda la información sobre los personajes de Rick y Morty.",
   "moviesApiDescription": "Api realizada con NodeJs usando express como framework para crear el servidor, como base de datos se usa MongoDB, middlewares como JOI y HAPI para validaciones de datos y campos.",
   "english": "English level",
-  "softwaredev": "Software developer"
+  "softwaredev": "Software developer",
+  "marvelExp": "Using Angular, with a 2 layers model for the structure in the application. Here We can find all marvel characters and add comics to favourites list. This list persist in all navigation session thanks to the local storage."
 }

@@ -44,7 +44,7 @@ export default function Project({
         }
         .box:hover {
           box-shadow: 0 0px 20px ${colors.primary};
-          transform: scale(1.2);
+          transform: scale(1.1);
           -webkit-transition: 1s;
         }
         .content:hover {

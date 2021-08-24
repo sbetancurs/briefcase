@@ -4,5 +4,6 @@
   "teamManagerAppDescription": "App developed in React using Redux for manage general state, react Hooks, Rick and morty API.\nThis app is about manage team, change positions and animated put in positions.",
   "RickAndMortyAppDescription": "App developed in React using NextJS, react Hooks, Rick and morty API, Lazy load.\nThis app is about search and know all info about rick and morty characters.",
   "moviesApiDescription": "Api made with NodeJs using express as a framework to create the server, MongoDB is used as a database, middlewares like JOI and HAPI for data and field validations. ",
-  "oxigiovannyExp": "Used Javascript,NodeJS, NextJS to create a Web app that helps one health company to manage the data generated inside company's process, also generate reports and export these in excel files."
+  "oxigiovannyExp": "Used Javascript,NodeJS, NextJS to create a Web app that helps one health company to manage the data generated inside company's process, also generate reports and export these in excel files.",
+  "marvelExp": "Using Angular, with a 2 layers model for the structure in the application. Here We can find all marvel characters and add comics to favourites list. This list persist in all navigation session thanks to the local storage."
 }
