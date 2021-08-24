@@ -48,12 +48,12 @@ const Projects = ({ src, alt, title, description, t }) => {
             description={t("project:oxigiovannyExp")}
             url='https://oxigiovanny.vercel.app/'
           />
-          <Project
+          {/* <Project
             srcIcon='/images/marvel.jpg'
             title='Marvel app'
             description={t("project:marvelExp")}
             url='https://marvel-app-sbetancurs.vercel.app/'
-          />
+          /> */}
         </section>
       </article>
       <style jsx>{`

@@ -276,7 +276,7 @@ const Curriculum = ({ t }) => {
               <p>{t("hv:moviesApiDescription")}</p>
             </div>
 
-            <div className='hv-content mb-3'>
+            {/* <div className='hv-content mb-3'>
               <h3>
                 <div className='d-flex subtitle'>
                   <img src='/icons/arrow-right-short.svg' />
@@ -286,7 +286,7 @@ const Curriculum = ({ t }) => {
                 </div>
               </h3>
               <p>{t("hv:marvelExp")}</p>
-            </div>
+            </div> */}
 
             <div className='hv-section'>
               <h2>{t("hv:education")}</h2>
