@@ -4,12 +4,12 @@ import Link from "next/link";
 import Input from "components/Input";
 import InputArea from "components/InputArea";
 import Button from "components/Button";
-import Loader from "components/Loader";
 import Title from "components/Title";
 
 import { colors, fontSizes } from "../../styles/theme";
 
 import { withTranslation } from "i18n.js";
+import Image from "next/image";
 
 const ContactMe = ({ t }) => {
   const initialValues = {
@@ -78,7 +78,12 @@ const ContactMe = ({ t }) => {
               <h3>{t("contactMe:followMe")} 🔥</h3>
               <ul>
                 <li>
-                  <img src='/icons/instagram.svg' alt='twitter' />
+                  <Image
+                    src='/icons/instagram.svg'
+                    alt='twitter'
+                    width={24}
+                    height={24}
+                  />
                   <a
                     href='https://www.instagram.com/sebastianbetancur97/'
                     alt='instagram'
@@ -88,7 +93,12 @@ const ContactMe = ({ t }) => {
                   </a>
                 </li>
                 <li>
-                  <img src='/icons/superprof.svg' alt='twitter' />
+                  <Image
+                    src='/icons/superprof.svg'
+                    alt='twitter'
+                    width={24}
+                    height={24}
+                  />
                   <a
                     href='https://www.superprof.co/panel-de-control.html/mis-anuncios/edicion/8117620'
                     alt='superprof'
@@ -98,7 +108,12 @@ const ContactMe = ({ t }) => {
                   </a>
                 </li>
                 <li>
-                  <img src='/icons/linkedin.svg' alt='linkedin' />
+                  <Image
+                    src='/icons/linkedin.svg'
+                    alt='linkedin'
+                    width={24}
+                    height={24}
+                  />
                   <a
                     href='https://www.linkedin.com/in/sbetancurs/'
                     target='_blank'
@@ -107,7 +122,12 @@ const ContactMe = ({ t }) => {
                   </a>
                 </li>
                 <li>
-                  <img src='/icons/github.svg' alt='github' />
+                  <Image
+                    src='/icons/github.svg'
+                    alt='github'
+                    width={24}
+                    height={24}
+                  />
                   <a href='https://github.com/sbetancurs/' target='_blank'>
                     GitHub
                   </a>
@@ -208,6 +228,15 @@ const ContactMe = ({ t }) => {
             height: 2px;
             background: ${colors.primary};
             animation: animate 4s linear infinite;
+          }
+
+          li {
+            display: flex;
+            align-items: center;
+          }
+
+          li a {
+            margin-left: 0.5rem;
           }
 
           @keyframes animate {

@@ -1,4 +1,5 @@
 import { breakpoints, colors, fontSizes } from "styles/theme";
+import Image from "next/image";
 
 export default function Card({ srcIcon, title, description }) {
   return (
@@ -8,7 +9,7 @@ export default function Card({ srcIcon, title, description }) {
         <span></span>
         <div className='content d-flex flex-column  align-items-center justify-content-center'>
           <div className='iconContainer'>
-            <img className='icon' src={srcIcon} />
+            <Image src={srcIcon} alt={description} width={200} height={200} />
           </div>
           <label>{title}</label>
           <p>{description}</p>
@@ -30,24 +31,7 @@ export default function Card({ srcIcon, title, description }) {
 
           -webkit-transition: 0.5s;
         }
-        .box:hover {
-          box-shadow: 0 0px 20px ${colors.primary};
-           {
-            /*transform: scale(1.15);
-          -webkit-transition: 1s; */
-          }
-        }
-        .content:hover {
-           {
-            /* top: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          bottom: 0 !important;
-          padding: 40px !important;
-          padding-top: 0 !important;
-          -webkit-transition: 1s; */
-          }
-        }
+
         .box .content {
           border: 1px solid slategrey;
           bottom: 15px;

@@ -33,5 +33,6 @@
   "moviesApiDescription": "Api realizada con NodeJs usando express como framework para crear el servidor, como base de datos se usa MongoDB, middlewares como JOI y HAPI para validaciones de datos y campos.",
   "english": "English level",
   "softwaredev": "Software developer",
-  "marvelExp": "Using Angular, with a 2 layers model for the structure in the application. Here We can find all marvel characters and add comics to favourites list. This list persist in all navigation session thanks to the local storage."
+  "marvelExp": "Using Angular, with a 2 layers model for the structure in the application. Here We can find all marvel characters and add comics to favourites list. This list persist in all navigation session thanks to the local storage.",
+  "marvelReactExp": "Using React, custom hooks, and local storage. In this application we will find all the marvel characters and we can add them to our favorites, also a login."
 }

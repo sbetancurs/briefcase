@@ -7,7 +7,7 @@ import Title from "components/Title";
 const Expertisies = ({ t }) => {
   return (
     <>
-      <article id='myKnowledges' className='d-flex flex-column py-5 min-vh-100'>
+      <article id='myKnowledges' className='d-flex flex-column py-1'>
         <section className='d-flex align-items-center justify-content-center mb-3'>
           <Title text={t("expertisie:MyExpertisie")} />
         </section>
@@ -36,23 +36,6 @@ const Expertisies = ({ t }) => {
             description={t("expertisie:React")}
           />
         </section>
-        <section className='d-none expertise skills'>
-          <h3 className='skills title'>Skills</h3>
-          <div className='skills content'>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quodoloribus eligendi, esse possimus perferendis beatae neque
-              dicta voluptates consectetur. Harum molestiae suscipit sapiente
-              nobis aut ratione. At impedit libero nesciunt!
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quodoloribus eligendi, esse possimus perferendis beatae neque
-              dicta voluptates consectetur. Harum molestiae suscipit sapiente
-              nobis aut ratione. At impedit libero nesciunt!
-            </p>
-          </div>
-        </section>
       </article>
       <style jsx>{`
         article {
@@ -61,6 +44,10 @@ const Expertisies = ({ t }) => {
 
         #cards {
           margin: 0;
+        }
+
+        #myKnowledges {
+          min-height: 90vh;
         }
       `}</style>
     </>

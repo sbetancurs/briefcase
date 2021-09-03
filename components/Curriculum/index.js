@@ -276,7 +276,19 @@ const Curriculum = ({ t }) => {
               <p>{t("hv:moviesApiDescription")}</p>
             </div>
 
-            {/* <div className='hv-content mb-3'>
+            <div className='hv-content'>
+              <h3>
+                <div className='d-flex subtitle'>
+                  <img src='/icons/arrow-right-short.svg' />
+                  <Link href='https://marvel-react-app.vercel.app'>
+                    <a target='_blank'>React Marvel App</a>
+                  </Link>
+                </div>
+              </h3>
+              <p>{t("hv:marvelReactExp")}</p>
+            </div>
+
+            <div className='hv-content mb-3'>
               <h3>
                 <div className='d-flex subtitle'>
                   <img src='/icons/arrow-right-short.svg' />
@@ -286,7 +298,7 @@ const Curriculum = ({ t }) => {
                 </div>
               </h3>
               <p>{t("hv:marvelExp")}</p>
-            </div> */}
+            </div>
 
             <div className='hv-section'>
               <h2>{t("hv:education")}</h2>

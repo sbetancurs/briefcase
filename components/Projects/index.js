@@ -10,10 +10,7 @@ const Projects = ({ src, alt, title, description, t }) => {
   description = "short description of";
   return (
     <>
-      <article
-        id='publicProjects'
-        className='d-flex flex-column py-5 min-vh-100'
-      >
+      <article id='publicProjects' className='d-flex flex-column py-1 '>
         <section className='d-flex align-items-center justify-content-center mb-3'>
           <Title text={t("project:publicProject")} />
         </section>
@@ -48,12 +45,18 @@ const Projects = ({ src, alt, title, description, t }) => {
             description={t("project:oxigiovannyExp")}
             url='https://oxigiovanny.vercel.app/'
           />
-          {/* <Project
+          <Project
             srcIcon='/images/marvel.jpg'
             title='Marvel app'
             description={t("project:marvelExp")}
             url='https://marvel-app-sbetancurs.vercel.app/'
-          /> */}
+          />
+          <Project
+            srcIcon='/images/react-marvel.jpg'
+            title='React Marvel app'
+            description={t("project:marvelReactExp")}
+            url='https://marvel-react-app.vercel.app'
+          />
         </section>
       </article>
       <style jsx>{`

@@ -33,5 +33,6 @@
   "moviesApiDescription": "Api realizada con NodeJs usando express como framework para crear el servidor, como base de datos se usa MongoDB, middlewares como JOI y HAPI para validaciones de datos y campos.",
   "english": "Nivel de Inglés",
   "softwaredev": "Desarrollador de software",
-  "marvelExp": "Usando angular, con un modelo de 2 capas para la estructura de la aplicación.En esta app encontraremos todos los personajes de marvel y sus comics, también podemos agregar nuestros comics favoritos a una lista que persiste en toda la sesión del navegador gracias al LocalStorage."
+  "marvelExp": "Usando angular, con un modelo de 2 capas para la estructura de la aplicación.En esta app encontraremos todos los personajes de marvel y sus comics, también podemos agregar nuestros comics favoritos a una lista que persiste en toda la sesión del navegador gracias al LocalStorage.",
+  "marvelReactExp": "Usando React, custom hooks y local storage.En esta app encontraremos todos los personajes de marvel y podremos agregarlos a nuestros favoritos, tambien un inicio de sesión."
 }

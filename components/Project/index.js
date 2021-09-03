@@ -1,4 +1,5 @@
 import { breakpoints, colors, fontSizes } from "styles/theme";
+import Image from "next/image";
 
 export default function Project({
   srcIcon,
@@ -15,7 +16,7 @@ export default function Project({
         <div className='content d-flex flex-column  align-items-center justify-content-start'>
           <div className='iconContainer'>
             <a href={url} target='_blank'>
-              <img className='icon' src={srcIcon} />
+              <Image src={srcIcon} alt={description} width={378} height={250} />
             </a>
           </div>
           <div className='text'>
@@ -44,16 +45,8 @@ export default function Project({
         }
         .box:hover {
           box-shadow: 0 0px 20px ${colors.primary};
-          transform: scale(1.1);
-          -webkit-transition: 1s;
-        }
-        .content:hover {
-          top: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          bottom: 0 !important;
-          padding-top: 0 !important;
-          -webkit-transition: 1s;
+          transform: scale(1.05);
+          -webkit-transition: 0.5s;
         }
 
         .box .content {
